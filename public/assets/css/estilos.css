@@ -1,0 +1,11 @@
+.bg {
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    background-position: center bottom; 
+    background-attachment: fixed;
+    background-image: url('../img/poke.2psd.jpg');
+}
+
+li {
+    list-style: none !important;
+}
