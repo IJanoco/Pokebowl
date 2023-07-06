@@ -9,7 +9,10 @@ use App\Models\{Product_Orders, Type_Product};
 
 class Product extends Model
 {
+    
     use HasFactory;
+
+    protected $table = 'product';
 
     public function product_orders()
     {

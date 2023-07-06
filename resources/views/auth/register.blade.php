@@ -11,24 +11,24 @@
   <meta name="keywords" content="" />
   <meta name="description" content="" />
   <meta name="author" content="" />
-  <link rel="shortcut icon" href="{{asset('assets/img/poke-bowl-icon.png')}}" type="">
+  <link rel="shortcut icon" href="{{asset('assetscustomer/img/poke-bowl-icon.png')}}" type="">
 
   <title> POKEBOWL YES! </title>
 
   <!-- bootstrap core css -->
-  <link rel="stylesheet" type="text/css" href="{{asset('assets/css/bootstrap.css')}}" />
+  <link rel="stylesheet" type="text/css" href="{{asset('assetscustomer/css/bootstrap.css')}}" />
 
   <!--owl slider stylesheet -->
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
   <!-- nice select  -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/css/nice-select.min.css" integrity="sha512-CruCP+TD3yXzlvvijET8wV5WxxEh5H8P4cmz0RFbKK6FlZ2sYl3AEsKlLPHbniXKSrDdFewhbmBK5skbdsASbQ==" crossorigin="anonymous" />
   <!-- font awesome style -->
-  <link href="{{asset('assets/css/font-awesome.min.css')}}" rel="stylesheet" />
+  <link href="{{asset('assetscustomer/css/font-awesome.min.css')}}" rel="stylesheet" />
 
   <!-- Custom styles for this template -->
-  <link href="{{asset('assets/css/style.css')}}" rel="stylesheet" />
+  <link href="{{asset('assetscustomer/css/style.css')}}" rel="stylesheet" />
   <!-- responsive style -->
-  <link href="{{asset('assets/css/responsive.css')}}" rel="stylesheet" />
+  <link href="{{asset('assetscustomer/css/responsive.css')}}" rel="stylesheet" />
 
 </head>
 
@@ -36,7 +36,7 @@
 
   <div class="hero_area">
     <div class="bg-box">
-      <img src="{{asset('assets/images/hero-bg.jpg')}}" alt="">
+      <img src="{{asset('assetscustomer/images/hero-bg.jpg')}}" alt="">
     </div>
     <!-- header section strats -->
     <header class="header_section">

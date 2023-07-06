@@ -11,26 +11,26 @@
   <meta name="keywords" content="" />
   <meta name="description" content="" />
   <meta name="author" content="" />
-  <link rel="shortcut icon" href="{{asset('assets/img/poke-bowl-icon.png')}}" type="">
+  <link rel="shortcut icon" href="{{asset('assetscustomer/img/poke-bowl-icon.png')}}" type="">
 
   <title> POKEBOWL YES! </title>
 
   <!-- bootstrap core css -->
-  <link rel="stylesheet" type="text/css" href="{{asset('assets/css/bootstrap.css')}}" />
+  <link rel="stylesheet" type="text/css" href="{{asset('assetscustomer/css/bootstrap.css')}}" />
 
   <!--owl slider stylesheet -->
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
   <!-- nice select  -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/css/nice-select.min.css" integrity="sha512-CruCP+TD3yXzlvvijET8wV5WxxEh5H8P4cmz0RFbKK6FlZ2sYl3AEsKlLPHbniXKSrDdFewhbmBK5skbdsASbQ==" crossorigin="anonymous" />
   <!-- font awesome style -->
-  <link href="{{asset('assets/css/font-awesome.min.css')}}" rel="stylesheet" />
+  <link href="{{asset('assetscustomer/css/font-awesome.min.css')}}" rel="stylesheet" />
 
   <!-- Custom styles for this template -->
-  <link href="{{asset('assets/css/style.css')}}" rel="stylesheet" />
+  <link href="{{asset('assetscustomer/css/style.css')}}" rel="stylesheet" />
   <!-- responsive style -->
-  <link href="{{asset('assets/css/responsive.css')}}" rel="stylesheet" />
+  <link href="{{asset('assetscustomer/css/responsive.css')}}" rel="stylesheet" />
   <!-- estilos css-->
-  <link href="{{asset('assets/css/estilos.css')}}" rel="stylesheet" />  
+  <link href="{{asset('assetscustomer/css/estilos.css')}}" rel="stylesheet" />  
 </head>
 
 <body>
@@ -42,7 +42,7 @@
     <div class="col-12 bg-dark">
       <div class="container">
         <nav class="navbar navbar-expand-lg custom_nav-container">
-          <a class="navbar-brand" href="index.html">
+          <a class="navbar-brand" href="{{route('home')}}">
             <span>
                 <h5 class="m-b-10">WELCOME TO POKEBOWL YES! - {{ Auth::user()->name }}</h5> 
             </span>
@@ -58,7 +58,7 @@
               <li class="nav-item">
                 <a class="nav-link" href="{{route('home')}}">Home </a>
               </li>
-              <li class="nav-item active">
+              <li class="nav-item">
                 <a class="nav-link" href="{{route('menu')}}">Menu <span class="sr-only">(current)</span> </a>
               </li>
               <li class="nav-item">
@@ -129,25 +129,23 @@
                   <i class="fa fa-search" aria-hidden="true"></i>
                 </button>
               </form>
-              <a href="" class="order_online">
-                Order Online
+              <a class="text-white start-float" href="{{ route('logout') }}"
+                  onclick="event.preventDefault();
+                                document.getElementById('logout-form').submit();">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z"/>
+                    <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/>
+                  </svg>
+                  
               </a>
-
-              <li class="waves-effect waves-light">
-                <a class="dropdown-item text-white" href="{{ route('logout') }}"
-                   onclick="event.preventDefault();
-                                 document.getElementById('logout-form').submit();">
-                    <i class="ti-layout-sidebar-left"></i>
-                    {{ __('Logout') }}
-                </a>
-                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                    @csrf
-                </form>
-              </li>
+              <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                  @csrf
+              </form>
+          
             </div>
           </div>
         </nav>
-     </div>
+      </div>
     </div>          
       
   </header>
@@ -252,12 +250,12 @@
   <!-- footer section -->
 
   <!-- jQery -->
-  <script src="{{asset('assets/js/jquery-3.4.1.min.js')}}"></script>
+  <script src="{{asset('assetscustomer/js/jquery-3.4.1.min.js')}}"></script>
   <!-- popper js -->
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
   </script>
   <!-- bootstrap js -->
-  <script src="js/bootstrap.js"></script>
+  <script src="{{asset('assetscustomer/js/bootstrap.js')}}"></script>
   <!-- owl slider -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
   </script>
@@ -266,7 +264,7 @@
   <!-- nice select -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/js/jquery.nice-select.min.js"></script>
   <!-- custom js -->
-  <script src="{{asset('assets/js/custom.js')}}"></script>
+  <script src="{{asset('assetscustomer/js/custom.js')}}"></script>
   <!-- Google Map -->
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap">
   </script>

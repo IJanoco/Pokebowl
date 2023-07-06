@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="bg-box">
-    <img src="{{asset('assets/img/bg-principal.jpg')}}" alt="">
+    <img src="{{asset('assetscustomer/img/bg-principal.jpg')}}" alt="">
   </div>
 <section class="slider_section ">
     <div id="customCarousel1" class="carousel slide" data-ride="carousel">
