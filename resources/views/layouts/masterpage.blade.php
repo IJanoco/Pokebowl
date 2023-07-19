@@ -177,12 +177,7 @@
               Contáctanos
             </h4>
             <div class="contact_link_box">
-              <a href="">
-                <i class="fa fa-map-marker" aria-hidden="true"></i>
-                <span>
-                  Ubicación
-                </span>
-              </a>
+              
               <a href="">
                 <i class="fa fa-phone" aria-hidden="true"></i>
                 <span>
@@ -227,10 +222,10 @@
         </div>
         <div class="col-md-4 footer-col">
           <h4>
-            Opening Hours
+            Horario de Atención
           </h4>
           <p>
-            Everyday
+            Todos los Días
           </p>
           <p>
             10.00 Am -10.00 Pm

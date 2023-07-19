@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\ControllersAdmin;
+namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class InvoiceController extends Controller
+class OrdersController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class InvoiceController extends Controller
      */
     public function index()
     {
-        return view('viewsadmin.invoice');
+        return view('viewsadmin.orders');
     }
 
     /**

@@ -100,7 +100,7 @@
         </div>
       </div>
       <div class="btn-box">
-        <a href="">
+        <a href="{{route('reports.induccion')}}">
           View More
         </a>
       </div>

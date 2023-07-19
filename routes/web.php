@@ -1,7 +1,22 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Customer\{
+    AboutController,
+    HomeController,
+    MenuController,
+};
 
+use App\Http\Controllers\Admin\{
+    CompanyController,
+    DashboardController,
+    InvoiceController,
+    OrdersController,
+    ProductController,
+    UserController,
+    TypeProductController,
+
+};
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,19 +29,33 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
 });
 
 Auth::routes();
 
 Route::resource('/menu', MenuController::class);
+//REPORTE
+Route::get('/reporte-induccion',[ProductController::class, 'ReporteInduccion'])->name('reports.induccion');
 
-Route::get('/dashboard', [App\Http\Controllers\ControllersAdmin\DashboardController::class, 'index'])->name('dashboard');
-Route::get('/invoice', [App\Http\Controllers\ControllersAdmin\InvoiceController::class, 'index'])->name('invoice');
-Route::get('/user', [App\Http\Controllers\ControllersAdmin\UserController::class, 'index'])->name('user');
-Route::get('/product', [App\Http\Controllers\ControllersAdmin\ProductController::class, 'index'])->name('product');
-Route::get('/orders', [App\Http\Controllers\ControllersAdmin\OrdersController::class, 'index'])->name('orders');
-Route::get('/company', [App\Http\Controllers\ControllersAdmin\CompanyController::class, 'index'])->name('company');
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/menu', [App\Http\Controllers\MenuController::class, 'index'])->name('menu');
-Route::get('/about', [App\Http\Controllers\AboutController::class, 'index'])->name('about');
+//ADMIN VIEWS
+Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+Route::get('/invoice', [InvoiceController::class, 'index'])->name('invoice');
+//TIPO USUARIOS
+
+//USUARIOS
+Route::resource('/user', UserController::class);
+Route::get('/user', [UserController::class, 'index'])->name('user');
+
+Route::get('/orders', [OrdersController::class, 'index'])->name('orders');
+Route::get('/company', [CompanyController::class, 'index'])->name('company');
+//TIPO PRODUCTOS
+Route::resource('/typeproduct', TypeProductController::class);
+Route::get('/typeproduct', [TypeProductController::class,'index'])->name('typeproduct');
+//PRODUCTOS
+Route::resource('/product', ProductController::class);
+Route::get('/product', [ProductController::class, 'index'])->name('product');
+//CLIENTE
+Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::get('/menu', [MenuController::class, 'index'])->name('menu');
+Route::get('/about', [AboutController::class, 'index'])->name('about');

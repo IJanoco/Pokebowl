@@ -13,6 +13,9 @@ class Product extends Model
     use HasFactory;
 
     protected $table = 'product';
+    protected $primarykey = 'id';
+    protected $fillable=['name','description','price','url_img','id_type'];
+    //public $timestamps = false;
 
     public function product_orders()
     {

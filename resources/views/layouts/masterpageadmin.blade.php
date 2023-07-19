@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>POKE ADMIN</title>
     <!-- plugins:css -->
+   
     <link rel="stylesheet" href="{{asset('assetsadmin/vendors/mdi/css/materialdesignicons.min.css')}}">
     <link rel="stylesheet" href="{{asset('assetsadmin/vendors/css/vendor.bundle.base.css')}}">
     <!-- endinject -->
@@ -21,6 +22,8 @@
     <link rel="stylesheet" href="{{asset('assetsadmin/css/style.css')}}">
     <!-- End layout styles -->
     <link rel="shortcut icon" href="{{asset('assetsadmin/images/favicon.png')}}" />
+    <!-- FONT AWESOME-->
+    <script src="https://kit.fontawesome.com/14f5b5e840.js" crossorigin="anonymous"></script>
   </head>
   <body>
     <div class="container-scroller">
@@ -38,15 +41,23 @@
           <li class="nav-item menu-items">
             <a class="nav-link" href="{{route('dashboard')}}">
               <span class="menu-icon">
-                <i class="mdi mdi-speedometer"></i>
+                <i class="fa-solid fa-gauge-high"></i>
               </span>
               <span class="menu-title">Dashboard</span>
             </a>
           </li>
           <li class="nav-item menu-items">
+            <a class="nav-link" href="{{route('typeproduct')}}">
+              <span class="menu-icon">
+                <i class="fa-regular fa-chart-bar"></i>
+              </span>
+              <span class="menu-title">Tipo de Productos</span>
+            </a>
+          </li>
+          <li class="nav-item menu-items">
             <a class="nav-link" href="{{route('user')}}">
               <span class="menu-icon">
-                <i class="mdi mdi-account"></i>
+                <i class="fa-solid fa-user-plus fa-xs"></i>
               </span>
               <span class="menu-title">Usuarios</span>
             </a>
@@ -54,7 +65,7 @@
           <li class="nav-item menu-items">
             <a class="nav-link" href="{{route('product')}}">
               <span class="menu-icon">
-                <i class="mdi mdi-cart"></i>
+                <i class="fa-solid fa-cart-shopping"></i>
               </span>
               <span class="menu-title">Productos</span>
             </a>
@@ -62,7 +73,7 @@
           <li class="nav-item menu-items">
             <a class="nav-link" href="{{route('orders')}}">
               <span class="menu-icon">
-                <i class="mdi mdi-book"></i>
+                <i class="fa-solid fa-book"></i>
               </span>
               <span class="menu-title">Pedidos</span>
             </a>
@@ -70,7 +81,7 @@
           <li class="nav-item menu-items">
             <a class="nav-link" href="{{route('invoice')}}">
               <span class="menu-icon">
-                <i class="mdi mdi-currency-usd"></i>
+                <i class="fa-solid fa-dollar-sign"></i>
               </span>
               <span class="menu-title">Boletas</span>
             </a>
@@ -78,7 +89,7 @@
           <li class="nav-item menu-items">
             <a class="nav-link" href="{{route('company')}}">
               <span class="menu-icon">
-                <i class="mdi mdi-city"></i>
+                <i class="fa-solid fa-city"></i>
               </span>
               <span class="menu-title">Compañía</span>
             </a>
@@ -189,5 +200,6 @@
     <!-- Custom js for this page -->
     <script src="{{asset('assetsadmin/js/dashboard.js')}}"></script>
     <!-- End custom js for this page -->
+
   </body>
 </html>

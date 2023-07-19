@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
+use App\Models\Type_Product;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Product;
 
-class MenuController extends Controller
+class TypeProductController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +15,8 @@ class MenuController extends Controller
      */
     public function index()
     {
-        $menus = Product::all();
-
-        return view('viewscustomer.menu', ['menus' => $menus]);
+        $typeproducts = Type_Product::all();
+        return view('viewsadmin.typeProducts.index', ['typeproducts' => $typeproducts]);
     }
 
     /**
@@ -37,16 +37,19 @@ class MenuController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $input = $request->all();
+        
+        Type_Product::create($input);
+        return redirect('typeproduct');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\Type_Product  $type_Product
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Type_Product $type_Product)
     {
         //
     }
@@ -54,10 +57,10 @@ class MenuController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\Type_Product  $type_Product
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Type_Product $type_Product)
     {
         //
     }
@@ -66,22 +69,27 @@ class MenuController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Models\Type_Product  $type_Product
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
-        //
+        $typeproducts = Type_Product::find($id);
+        $input = $request->all();
+        $typeproducts->update($input);
+        return redirect('typeproduct'); 
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Models\Type_Product  $type_Product
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
-        //
+        $typeproducts = Type_Product::find($id);
+        $typeproducts->delete();
+        return redirect('typeproduct');
     }
 }

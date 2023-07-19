@@ -1,10 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Customer;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use App\Models\Product;
 
-class AboutController extends Controller
+class MenuController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +15,9 @@ class AboutController extends Controller
      */
     public function index()
     {
-        return view('viewscustomer.about');
+        $menus = Product::all();
+
+        return view('viewscustomer.menu', ['menus' => $menus]);
     }
 
     /**

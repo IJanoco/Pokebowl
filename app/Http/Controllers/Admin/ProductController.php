@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\ControllersAdmin;
+namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-
-class OrdersController extends Controller
+use App\Models\Product;
+use Barryvdh\DomPDF\Facade as PDF;
+class ProductController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +15,10 @@ class OrdersController extends Controller
      */
     public function index()
     {
-        return view('viewsadmin.orders');
+       
+        $products = Product::all();
+        return view('viewsadmin.products.index', ['products' => $products]);
+        
     }
 
     /**
@@ -27,6 +31,7 @@ class OrdersController extends Controller
         //
     }
 
+
     /**
      * Store a newly created resource in storage.
      *
@@ -35,8 +40,11 @@ class OrdersController extends Controller
      */
     public function store(Request $request)
     {
-        //
-    }
+        $input = $request->all();
+        
+        Product::create($input);
+        return redirect('product');
+    }   
 
     /**
      * Display the specified resource.
@@ -69,7 +77,10 @@ class OrdersController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $product = Product::find($id);
+        $input = $request->all();
+        $product->update($input);
+        return redirect('product'); 
     }
 
     /**
@@ -80,6 +91,26 @@ class OrdersController extends Controller
      */
     public function destroy($id)
     {
+        $products = Product::find($id);
+        $products->delete();
+        return redirect('product');
+    }
+
+    public function delete($id)
+    {
         //
+    }
+
+    public function ReporteInduccion()
+    {
+        //$user = User::all();
+        $pdf = \PDF::loadView('reports.induccion');
+        
+        //$pdf->setPaper(array(0,0,580.00,800.00),'landscape');
+
+        $pdf_name = 'induccion.pdf';
+         return $pdf->stream($pdf_name);
+        //return $pdf->download($pdf_name);
+       //return view ('reports.induccion');
     }
 }

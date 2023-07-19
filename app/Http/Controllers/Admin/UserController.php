@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\ControllersAdmin;
+namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-
-class ProductController extends Controller
+use App\Models\User;
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,8 @@ class ProductController extends Controller
      */
     public function index()
     {
-        return view('viewsadmin.product');
+        $users = User::all();
+        return view('viewsadmin.users.index', ['users' => $users]);
     }
 
     /**
@@ -24,7 +25,10 @@ class ProductController extends Controller
      */
     public function create()
     {
-        //
+        $input = $request->all();
+        
+        User::create($input);
+        return redirect('user');
     }
 
     /**
@@ -35,7 +39,10 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $input = $request->all();
+        
+        User::create($input);
+        return redirect('user');
     }
 
     /**
@@ -69,7 +76,10 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $users = User::find($id);
+        $input = $request->all();
+        $users->update($input);
+        return redirect('user');
     }
 
     /**
@@ -80,6 +90,8 @@ class ProductController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $users = User::find($id);
+        $users->delete();
+        return redirect('user');
     }
 }
