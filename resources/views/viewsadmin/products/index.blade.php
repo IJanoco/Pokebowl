@@ -40,7 +40,7 @@
                     <td> {{$item->url_img}}</td>                  
                     <td>
                       @include('viewsadmin.products.edit')                                                         
-                        <button type="submit" class="btn-md btn-warning btn-fw" data-toggle="modal" data-target="#editProduct{{$item->id}}">
+                        <button type="submit" class="btn-md btn-warning btn-fw alertEdit" data-toggle="modal" data-target="#editProduct{{$item->id}}">
                             <span class="mdi mdi-pencil"></span>     
                         </button>                      
                     </td>

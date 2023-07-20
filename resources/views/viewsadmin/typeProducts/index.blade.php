@@ -29,7 +29,7 @@
                             <td> {{$item->type}} </td>                 
                             <td>
                                 @include('viewsadmin.typeProducts.edit')                                                         
-                                <button type="submit" class="btn-md btn-warning btn-fw" data-toggle="modal" data-target="#editTypeProduct{{$item->id}}">
+                                <button type="submit" class="btn-md btn-warning btn-fw alertEdit" data-toggle="modal" data-target="#editTypeProduct{{$item->id}}">
                                     <span class="mdi mdi-pencil"></span>     
                                 </button>                      
                             </td>

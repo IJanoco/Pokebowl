@@ -13,14 +13,14 @@
               <div class="col-md-7 col-lg-6 ">
                 <div class="detail-box">
                   <h1>
-                    Fast Food Restaurant
+                    Platillos con ingredientes distribuidos
                   </h1>
                   <p>
-                    Doloremque, itaque aperiam facilis rerum, commodi, temporibus sapiente ad mollitia laborum quam quisquam esse error unde. Tempora ex doloremque, labore, sunt repellat dolore, iste magni quos nihil ducimus libero ipsam.
+                    Tras los largos años de experiencia nuestra sucursal es finalmente capaz de abrir las puertas a la atención virtual hacia nuestro público, ven y vive la experiencia de tener tu pokebowl al alcance de tu mano. 
                   </p>
                   <div class="btn-box">
-                    <a href="" class="btn1">
-                      Order Now
+                    <a href="{{route('menu')}}" class="btn1">
+                      Pide ya!
                     </a>
                   </div>
                 </div>
@@ -34,14 +34,14 @@
               <div class="col-md-7 col-lg-6 ">
                 <div class="detail-box">
                   <h1>
-                    Fast Food Restaurant
+                    Dieta balanceada
                   </h1>
                   <p>
-                    Doloremque, itaque aperiam facilis rerum, commodi, temporibus sapiente ad mollitia laborum quam quisquam esse error unde. Tempora ex doloremque, labore, sunt repellat dolore, iste magni quos nihil ducimus libero ipsam.
+                    Nuestros platillos establecidos tienen el propósito de otorgar a nuestro cliente una alimentación adecuada bajo en calorías para cuidar de su salud, encuentra nuestras dietas veganas ahora!
                   </p>
                   <div class="btn-box">
-                    <a href="" class="btn1">
-                      Order Now
+                    <a href="{{route('menu')}}" class="btn1">
+                      Quiero ver!
                     </a>
                   </div>
                 </div>
@@ -55,14 +55,14 @@
               <div class="col-md-7 col-lg-6 ">
                 <div class="detail-box">
                   <h1>
-                    Fast Food Restaurant
+                    Algo dulce para el corazón♥
                   </h1>
                   <p>
-                    Doloremque, itaque aperiam facilis rerum, commodi, temporibus sapiente ad mollitia laborum quam quisquam esse error unde. Tempora ex doloremque, labore, sunt repellat dolore, iste magni quos nihil ducimus libero ipsam.
+                    Otorgamos una pequeña variedad de postres para endulzar el paladar de nuestros clientes, tan dulces como en casa...
                   </p>
                   <div class="btn-box">
-                    <a href="" class="btn1">
-                      Order Now
+                    <a href="{{route('menu')}}" class="btn1">
+                      Muéstrame!
                     </a>
                   </div>
                 </div>

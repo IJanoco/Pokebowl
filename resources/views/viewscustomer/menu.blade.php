@@ -5,16 +5,16 @@
     <div class="container">
       <div class="heading_container heading_center">
         <h2>
-          Our Menu
+          Nuestro Menú
         </h2>
       </div>
 
       <ul class="filters_menu">
-        <li class="active" data-filter="*">All</li>
-        <li data-filter=".1">Burger</li>
-        <li data-filter=".2">Pizza</li>
-        <li data-filter=".3">Pasta</li>
-        <li data-filter=".4">Fries</li>
+        <li class="active" data-filter="*">Todo</li>
+        <li data-filter=".1">Aperitivos</li>
+        <li data-filter=".2">Pokebowls</li>
+        <li data-filter=".3">Postres</li>
+        <li data-filter=".4">Bebidas</li>
       </ul>
 
       <div class="filters-content">
@@ -99,11 +99,7 @@
          @endforeach
         </div>
       </div>
-      <div class="btn-box">
-        <a href="{{route('reports.induccion')}}">
-          View More
-        </a>
-      </div>
+      
     </div>
   </section>
 

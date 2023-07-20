@@ -15,9 +15,10 @@
     <link rel="stylesheet" href="{{asset('assetsadmin/vendors/flag-icon-css/css/flag-icon.min.css')}}">
     <link rel="stylesheet" href="{{asset('assetsadmin/vendors/owl-carousel-2/owl.carousel.min.css')}}">
     <link rel="stylesheet" href="{{asset('assetsadmin/vendors/owl-carousel-2/owl.theme.default.min.css')}}">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!-- End plugin css for this page -->
-    <!-- inject:css -->
-    <!-- endinject -->
+    <!-- alerts -->
+
     <!-- Layout styles -->
     <link rel="stylesheet" href="{{asset('assetsadmin/css/style.css')}}">
     <!-- End layout styles -->
@@ -200,6 +201,6 @@
     <!-- Custom js for this page -->
     <script src="{{asset('assetsadmin/js/dashboard.js')}}"></script>
     <!-- End custom js for this page -->
-
+    <script src="{{asset('assetsadmin/js/alerts.js')}}"></script>
   </body>
 </html>

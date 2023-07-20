@@ -7,24 +7,25 @@
       <div class="row">
         <div class="col-md-6 ">
           <div class="img-box">
-            <img src="{{asset('assetscustomer/img/quienes-somos.png')}}"img/quienes-somos.png alt="">
+            <img src="{{asset('assetscustomer/img/quienes-somos.png')}}" alt="">
           </div>
         </div>
         <div class="col-md-6">
           <div class="detail-box">
             <div class="heading_container">
               <h2>
-                We Are Feane
+                PokeBowl Yes!
               </h2>
             </div>
             <p>
-              There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration
-              in some form, by injected humour, or randomised words which don't look even slightly believable. If you
-              are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in
-              the middle of text. All
+              Emprendimiento peruano dentro del rubro de la alimentación sana,brindando satisfacción a los clientes
+              desde 2019.
+              ¡Una amplia oferta de productos de la más alta calidad!
+              Prueba y disfruta nuestros deliciosos Bowls, bebidas, ensaladas y postres.
+              Aquí podrás comprar tus productos de manera rápida y segura. Te atenderemos 
             </p>
             <a href="">
-              Read More
+              Saber más
             </a>
           </div>
         </div>

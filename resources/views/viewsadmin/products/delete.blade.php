@@ -9,7 +9,7 @@
           </button>
         </div>
         <div class="modal-body">
-            <form action="{{ url('product/' .$item->id) }}" method="post">
+            <form class="alertDelete" action="{{ url('product/' .$item->id) }}" method="post">
                 @csrf                  
                 <input type="hidden" name="id" id="id" value="{{$item->id}}"/>
          
@@ -29,12 +29,12 @@
          
                 <input type="text" name="url_img" id="url_img" value="{{$item->url_img}}" class="form-control" disabled></br>
          
-                <form method="POST" action="{{ url('/product' . '/' . $item->id) }}" accept-charset="UTF-8" style="display:inline">
+                <form class="alertDelete" method="POST" action="{{ url('/product' . '/' . $item->id) }}" accept-charset="UTF-8" style="display:inline">
                     @method('DELETE')
                     @csrf
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                        <button ttype="submit" class="btn btn-danger btn-sm" title="Delete Student"onclick="return confirm('Confirm delete?')">Eliminar Producto</button>
+                        <button ttype="submit" class="btn btn-danger btn-sm" title="Delete Student">Eliminar Producto</button>
                     </div>
                  
                 </form>

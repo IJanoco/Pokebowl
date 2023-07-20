@@ -8,7 +8,7 @@
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <form action="{{ url('product/'. $item->id ) }}" method="post">
+        <form class="alertEdit" action="{{ url('product/'. $item->id ) }}" method="post">
           <div class="modal-body">             
                   @csrf
           

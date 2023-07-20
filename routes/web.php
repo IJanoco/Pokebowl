@@ -44,6 +44,7 @@ Route::get('/invoice', [InvoiceController::class, 'index'])->name('invoice');
 //TIPO USUARIOS
 
 //USUARIOS
+Route::get('/reporte-usuario/{item}',[UserController::class, 'ReporteUsuario'])->name('reports.usuario');
 Route::resource('/user', UserController::class);
 Route::get('/user', [UserController::class, 'index'])->name('user');
 

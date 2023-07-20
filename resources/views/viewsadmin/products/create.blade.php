@@ -23,10 +23,12 @@
           
                   <input type="text" name="price" id="price" class="form-control"></br>
           
-                  <!--<label>URL Imagen:</label></br>-->
-
+                  <label>Imagen:</label></br>
+                  <input type="file" name="url_img" id="url_img" class="form-control"></br>
+                  
                   <input type="hidden" name="id_type" value="3" class="form-control">
-                  <input type="hidden" name="url_img" value="a" class="form-control"></br>
+
+                  
           </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>

@@ -3,12 +3,12 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title">EDITAR PRODUCTO</h5>
+          <h5 class="modal-title">EDITAR USUARIO</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <form action="{{ url('user/'. $item->id ) }}" method="post">
+        <form class="alertEdit" action="{{ url('user/'. $item->id ) }}" method="post">
           <div class="modal-body">             
                   @csrf
           

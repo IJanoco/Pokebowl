@@ -42,6 +42,18 @@ class ProductController extends Controller
     {
         $input = $request->all();
         
+        if ($request->hasFile('url_img') && $request->file('url_img')->isValid()) 
+        {
+            $file = $request->file('url_img');
+            $filename = $file->getClientOriginalName() . '.' . $file->getClientOriginalExtension();
+            $fileroute = 'assetscustomer/imgmenu/'. $filename;
+
+
+            $file->move(public_path('assetscustomer/imgmenu/'), $filename);
+            $input['url_img'] = $fileroute;
+            
+        }
+
         Product::create($input);
         return redirect('product');
     }   

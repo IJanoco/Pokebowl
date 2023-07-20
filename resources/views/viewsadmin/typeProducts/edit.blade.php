@@ -4,11 +4,11 @@
     <div class="modal-content">
         <div class="modal-header">
         <h5 class="modal-title">EDITAR TIPO PRODUCTO</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <button type="button" class="close " data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
         </button>
         </div>
-        <form action="{{ url('typeproduct/'. $item->id ) }}" method="post">
+        <form class="alertEdit" action="{{ url('typeproduct/'. $item->id ) }}" method="post">
         <div class="modal-body">             
                 @csrf
         

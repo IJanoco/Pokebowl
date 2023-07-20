@@ -36,7 +36,7 @@
                 <td> {{$item->id_type}}</td>                   
                 <td>
                   @include('viewsadmin.users.edit')                                                         
-                    <button type="submit" class="btn-md btn-warning btn-fw" data-toggle="modal" data-target="#editUser{{$item->id}}">
+                    <button type="submit" class="btn-md btn-warning btn-fw alertEdit" data-toggle="modal" data-target="#editUser{{$item->id}}">
                         <span class="mdi mdi-pencil"></span>     
                     </button>                      
                 </td>
@@ -45,6 +45,11 @@
                   <button type="submit" class="btn-md btn-danger btn-fw" data-toggle="modal" data-target="#deleteUser{{$item->id}}">
                     <span class="mdi mdi-delete"></span>
                 </button>
+                </td>
+                <td>
+                  <a href="{{route('reports.usuario', $item)}}" class="btn btn-primary" type="submit">
+                    <i class="fa-solid fa-plus"></i> Descargar
+                </a>
                 </td>
               </tr>
             @endforeach
