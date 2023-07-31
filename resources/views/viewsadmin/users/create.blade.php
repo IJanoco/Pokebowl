@@ -13,39 +13,39 @@
                   @csrf
                   <label>Nombre:</label></br>
           
-                  <input type="text" name="name" id="name"  class="form-control"></br>
+                  <input type="text" name="name" class="form-control"></br>
 
                   <label>Apellido:</label></br>
           
-                  <input type="text" name="last_name" id="last_name"  class="form-control"></br>
+                  <input type="text" name="last_name" class="form-control"></br>
           
                   <label>Correo:</label></br>
           
-                  <input type="email" name="email" id="email" class="form-control"></br>
+                  <input type="email" name="email" class="form-control"></br>
           
                   <label>Contraseña:</label></br>
           
-                  <input type="password" name="password" id="password" class="form-control"></br>
+                  <input type="password" name="password" class="form-control"></br>
 
                   <label>Confirmar Contraseña</label>
 
-                  <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password" placeholder="Confirme su contraseña">
+                  <input type="password" class="form-control" name="password_confirmation" required autocomplete="new-password" placeholder="Confirme su contraseña">
 
                   <label>Dirección:</label></br>
           
-                  <input type="text" name="address" id="address"  class="form-control"></br>
+                  <input type="text" name="address" class="form-control"></br>
 
                   <label>Código Postal:</label></br>
           
-                  <input type="text" name="postal_code" id="postal_code"  class="form-control"></br>
+                  <input type="text" name="postal_code" class="form-control"></br>
 
                   <label>Teléfono:</label></br>
           
-                  <input type="text" name="phone" id="phone"  class="form-control"></br>
+                  <input type="text" name="phone" class="form-control"></br>
 
                   <label>DNI:</label></br>
           
-                  <input type="text" name="dni" id="dni"  class="form-control"></br>
+                  <input type="text" name="dni" class="form-control"></br>
           
                   <!--<label>URL Imagen:</label></br>-->
 

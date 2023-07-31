@@ -35,20 +35,22 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::resource('/menu', MenuController::class);
-//REPORTE
-Route::get('/reporte-induccion',[ProductController::class, 'ReporteInduccion'])->name('reports.induccion');
+
 
 //ADMIN VIEWS
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+
+//REPORTE
 Route::get('/invoice', [InvoiceController::class, 'index'])->name('invoice');
+Route::get('/reports-invoice',[InvoiceController::class, 'ReportInvoice'])->name('reports.invoiceOrder');
 //TIPO USUARIOS
 
 //USUARIOS
-Route::get('/reporte-usuario/{item}',[UserController::class, 'ReporteUsuario'])->name('reports.usuario');
 Route::resource('/user', UserController::class);
 Route::get('/user', [UserController::class, 'index'])->name('user');
-
+//PEDIDOS
 Route::get('/orders', [OrdersController::class, 'index'])->name('orders');
+//COMPAÑÍA
 Route::get('/company', [CompanyController::class, 'index'])->name('company');
 //TIPO PRODUCTOS
 Route::resource('/typeproduct', TypeProductController::class);

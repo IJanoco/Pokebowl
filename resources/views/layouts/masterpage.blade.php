@@ -125,9 +125,9 @@
                 </svg>
               </a>
               <form class="form-inline">
-                <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit">
+                <a class="btn my-2 my-sm-0 nav_search-btn" href="{{route('reports.invoiceOrder')}}">
                   <i class="fa fa-search" aria-hidden="true"></i>
-                </button>
+                </a>
               </form>
               <a class="text-white start-float" href="{{ route('logout') }}"
                   onclick="event.preventDefault();

@@ -42,7 +42,7 @@ class UserController extends Controller
         $input = $request->all();
         
         User::create($input);
-        return redirect('user')->with('flash_message', 'Addedd!');
+        return redirect('user');
     }
 
     /**
@@ -79,7 +79,7 @@ class UserController extends Controller
         $users = User::find($id);
         $input = $request->all();
         $users->update($input);
-        return redirect('user')->with('flash_message', 'Updated!');
+        return redirect('user');
     }
 
     /**
@@ -94,10 +94,5 @@ class UserController extends Controller
         $users->delete();
         return redirect('user');
     }
-    public function ReporteUsuario(User $item)
-    {
-        $pdf = \PDF::loadView('reports.invoiceOrder', compact('item'));
-        $pdf_name = 'invoice.pdf';
-         return $pdf->stream($pdf_name);
-    }
+  
 }

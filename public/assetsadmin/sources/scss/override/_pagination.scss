@@ -1,0 +1,31 @@
+.page-item {
+  .page-link {
+    color: color(warning);
+    border-radius: 3px;
+    margin: 0 3px;
+  }
+  &.active .page-link {
+    background-color: color(warning);
+    border-color: color(warning);
+  }
+  &.disabled .page-link {
+    border-color: transparent;
+    background-color: color_lighten(warning, 31.7%);
+    color: color(warning);
+    opacity: .6;
+  }
+}
+
+.page-link {
+  border-color: transparent;
+  background-color: color_lighten(warning, 31.7%);
+  font-weight: 600;
+  &:hover {
+    background-color: color(warning);
+    color: #fff;
+    border-color: transparent;
+  }
+  &:focus {
+    box-shadow: none;
+  }
+}

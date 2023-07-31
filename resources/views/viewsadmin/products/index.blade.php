@@ -41,7 +41,7 @@
                     <td>
                       @include('viewsadmin.products.edit')                                                         
                         <button type="submit" class="btn-md btn-warning btn-fw alertEdit" data-toggle="modal" data-target="#editProduct{{$item->id}}">
-                            <span class="mdi mdi-pencil"></span>     
+                            <span class="fas fa-pen"></span>     
                         </button>                      
                     </td>
                     <td>

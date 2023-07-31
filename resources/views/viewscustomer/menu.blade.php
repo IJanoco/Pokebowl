@@ -95,11 +95,16 @@
                   </div>
                 </div>
               </div>
-            </div>   
+            </div>
+             
          @endforeach
         </div>
       </div>
-      
+      <div class="btn-box">
+        <a href="{{route('reports.invoiceOrder')}}">
+          REPORTE
+        </a>
+      </div>  
     </div>
   </section>
 

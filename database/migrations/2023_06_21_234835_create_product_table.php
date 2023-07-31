@@ -19,7 +19,7 @@ class CreateProductTable extends Migration
             $table->string('description');
             $table->double('price', 8,2);
             $table->string('url_img');
-            $table->foreignId('id_type')->constrained('type_product');
+            $table->unsignedBigInteger('id_type');
             $table->timestamps();
         });
 

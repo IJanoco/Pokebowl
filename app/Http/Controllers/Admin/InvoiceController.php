@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Barryvdh\DomPDF\Facade as PDF;
 
 class InvoiceController extends Controller
 {
@@ -81,5 +82,18 @@ class InvoiceController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function ReportInvoice()
+    {
+        //$user = User::all();
+        $pdf = \PDF::loadView('reports.invoiceOrder');
+        
+        //$pdf->setPaper(array(0,0,580.00,800.00),'landscape');
+
+        $pdf_name = 'Reporte.pdf';
+         return $pdf->stream($pdf_name);
+        //return $pdf->download($pdf_name);
+       //return view ('reports.induccion');
     }
 }

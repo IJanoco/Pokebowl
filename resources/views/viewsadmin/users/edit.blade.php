@@ -16,31 +16,31 @@
           
                   <label>Nombre:</label></br>
           
-                  <input type="text" name="name" id="name" value="{{$item->name}}" class="form-control"></br>
+                  <input type="text" name="name" value="{{$item->name}}" class="form-control"></br>
 
                   <label>Apellido:</label></br>
           
-                  <input type="text" name="last_name" id="last_name" value="{{$item->last_name}}"  class="form-control"></br>
+                  <input type="text" name="last_name" value="{{$item->last_name}}"  class="form-control"></br>
           
                   <label>Correo:</label></br>
           
-                  <input type="email" name="email" id="email" value="{{$item->email}}"  class="form-control"></br>
+                  <input type="email" name="email" value="{{$item->email}}"  class="form-control"></br>
 
                   <label>Dirección:</label></br>
           
-                  <input type="text" name="address" id="address" value="{{$item->address}}"  class="form-control"></br>
+                  <input type="text" name="address" value="{{$item->address}}"  class="form-control"></br>
 
                   <label>Código Postal:</label></br>
           
-                  <input type="text" name="postal_code" id="postal_code" value="{{$item->postal_code}}"  class="form-control"></br>
+                  <input type="text" name="postal_code" value="{{$item->postal_code}}"  class="form-control"></br>
 
                   <label>Teléfono:</label></br>
           
-                  <input type="text" name="phone" id="phone" value="{{$item->phone}}"  class="form-control"></br>
+                  <input type="text" name="phone" value="{{$item->phone}}"  class="form-control"></br>
 
                   <label>DNI:</label></br>
           
-                  <input type="text" name="dni" id="dni" value="{{$item->dni}}"   class="form-control"></br>
+                  <input type="text" name="dni" value="{{$item->dni}}"   class="form-control"></br>
                                   
           </div>
         <div class="modal-footer">

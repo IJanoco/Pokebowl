@@ -113,16 +113,5 @@ class ProductController extends Controller
         //
     }
 
-    public function ReporteInduccion()
-    {
-        //$user = User::all();
-        $pdf = \PDF::loadView('reports.induccion');
-        
-        //$pdf->setPaper(array(0,0,580.00,800.00),'landscape');
-
-        $pdf_name = 'induccion.pdf';
-         return $pdf->stream($pdf_name);
-        //return $pdf->download($pdf_name);
-       //return view ('reports.induccion');
-    }
+   
 }

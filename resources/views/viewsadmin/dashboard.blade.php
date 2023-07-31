@@ -3,102 +3,100 @@
 @section('content')
 
 <div class="row">
-    <div class="col-sm-4 grid-margin">
-        <div class="card">
-        <div class="card-body">
-            <h5>Usuarios</h5>
-            <div class="row">
-            <div class="col-8 col-sm-12 col-xl-8 my-auto">
-                <div class="d-flex d-sm-block d-md-flex align-items-center">
-            
-                
-                </div>
-                <h6 class="text-muted font-weight-normal">11.38% Since last month</h6>
+    <div class="col-lg-6 col-md-6 col-sm-6 col-12">
+        <div class="card card-statistic-1">
+          <div class="card-icon bg-success">
+            <i class="fas fa-user"></i>
+          </div>
+          <div class="card-wrap">
+            <div class="card-header">
+              <h4>Usuarios</h4>
             </div>
-            <div class="col-4 col-sm-12 col-xl-4 text-center text-xl-right">
-                <i class="icon-lg mdi mdi-account text-light ml-auto"></i>
+            <div class="card-body">
+              10
             </div>
-            </div>
+          </div>
         </div>
+      </div>
+    
+      <div class="col-lg-6 col-md-6 col-sm-6 col-12">
+        <div class="card card-statistic-1">
+          <div class="card-icon bg-danger">
+            <i class="fas fa-bookmark"></i>
+          </div>
+          <div class="card-wrap">
+            <div class="card-header">
+              <h4>Tipo de Productos</h4>
+            </div>
+            <div class="card-body">
+              10
+            </div>
+          </div>
         </div>
-    </div>
-    <div class="col-sm-4 grid-margin">
-        <div class="card">
-        <div class="card-body">
-            <h5>Productos</h5>
-            <div class="row">
-            <div class="col-8 col-sm-12 col-xl-8 my-auto">
-                <div class="d-flex d-sm-block d-md-flex align-items-center">
-        
-                
-                </div>
-                <h6 class="text-muted font-weight-normal">11.38% Since last month</h6>
-            </div>
-            <div class="col-4 col-sm-12 col-xl-4 text-center text-xl-right">
-                <i class="icon-lg mdi mdi-cart text-warning ml-auto"></i>
-            </div>
-            </div>
-        </div>
-        </div>
-    </div>
-    <div class="col-sm-4 grid-margin">
-        <div class="card">
-        <div class="card-body">
-            <h5>Pedidos</h5>
-            <div class="row">
-            <div class="col-8 col-sm-12 col-xl-8 my-auto">
-                <div class="d-flex d-sm-block d-md-flex align-items-center">
-               
-               
-                </div>
-                <h6 class="text-muted font-weight-normal">11.38% Since last month</h6>
-            </div>
-            <div class="col-4 col-sm-12 col-xl-4 text-center text-xl-right">
-                <i class="icon-lg mdi mdi-book text-danger ml-auto"></i>
-            </div>
-            </div>
-        </div>
-        </div>
-    </div>
+      </div>
 </div>
 <div class="row">
-    <div class="col-sm-4 grid-margin">
-        <div class="card">
-        <div class="card-body">
-            <h5>Boletas</h5>
-            <div class="row">
-            <div class="col-8 col-sm-12 col-xl-8 my-auto">
-                <div class="d-flex d-sm-block d-md-flex align-items-center">
-               
-          
-                </div>
-                <h6 class="text-muted font-weight-normal">11.38% Since last month</h6>
+    <div class="col-lg-6 col-md-6 col-sm-6 col-12">
+        <div class="card card-statistic-1">
+          <div class="card-icon bg-warning">
+            <i class="fas fa-shopping-cart"></i>
+          </div>
+          <div class="card-wrap">
+            <div class="card-header">
+              <h4>Productos</h4>
             </div>
-            <div class="col-4 col-sm-12 col-xl-4 text-center text-xl-right">
-                <i class="icon-lg mdi mdi-currency-usd text-primary ml-auto"></i>
+            <div class="card-body">
+              10
             </div>
-            </div>
+          </div>
         </div>
+      </div>
+      <div class="col-lg-6 col-md-6 col-sm-6 col-12">
+        <div class="card card-statistic-1">
+          <div class="card-icon bg-info">
+            <i class="fas fa-book"></i>
+          </div>
+          <div class="card-wrap">
+            <div class="card-header">
+              <h4>Pedidos</h4>
+            </div>
+            <div class="card-body">
+              10
+            </div>
+          </div>
         </div>
+      </div>
+</div>  
+<div class="row">
+  <div class="col-lg-6 col-md-6 col-sm-6 col-12">
+      <div class="card card-statistic-1">
+        <div class="card-icon bg-primary">
+          <i class="fas fa-dollar-sign"></i>
+        </div>
+        <div class="card-wrap">
+          <div class="card-header">
+            <h4>Boletas</h4>
+          </div>
+          <div class="card-body">
+            10
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="col-sm-4 grid-margin">
-        <div class="card">
-        <div class="card-body">
-            <h5>Compañía</h5>
-            <div class="row">
-            <div class="col-8 col-sm-12 col-xl-8 my-auto">
-                <div class="d-flex d-sm-block d-md-flex align-items-center">
-               
-               
-                </div>
-                <h6 class="text-muted font-weight-normal">11.38% Since last month</h6>
-            </div>
-            <div class="col-4 col-sm-12 col-xl-4 text-center text-xl-right">
-                <i class="icon-lg mdi mdi-city text-success ml-auto"></i>
-            </div>
-            </div>
+    <div class="col-lg-6 col-md-6 col-sm-6 col-12">
+      <div class="card card-statistic-1">
+        <div class="card-icon bg-dark">
+          <i class="fas fa-city"></i>
         </div>
+        <div class="card-wrap">
+          <div class="card-header">
+            <h4>Compañía</h4>
+          </div>
+          <div class="card-body">
+            10
+          </div>
         </div>
+      </div>
     </div>
 </div>  
 @endsection
