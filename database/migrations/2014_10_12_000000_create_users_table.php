@@ -23,7 +23,6 @@ class CreateUsersTable extends Migration
             $table->string('postal_code');
             $table->string('phone');
             $table->string('dni');
-            $table->rememberToken();
             $table->unsignedBigInteger('id_type');
             $table->timestamps();
             
