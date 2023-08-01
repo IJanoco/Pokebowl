@@ -1,5 +1,5 @@
  <!--EDITAR TIPO DE PRODUCTO-->
- <div class="modal fade" id="editUser{{$item->id}}" tabindex="-1" aria-labelledby="EditarProducto" aria-hidden="true">
+ <div class="modal fade" id="editUser" tabindex="-1" aria-labelledby="EditarUsuario" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -8,7 +8,7 @@
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <form class="alertEdit" action="{{ url('user/'. $item->id ) }}" method="post">
+        <form class="alertEdit" id="edit-users-form" method="post" action="">
           <div class="modal-body">             
                   @csrf
           

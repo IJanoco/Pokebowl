@@ -47,7 +47,9 @@ Route::get('/reports-invoice',[InvoiceController::class, 'ReportInvoice'])->name
 
 //USUARIOS
 Route::resource('/user', UserController::class);
+Route::get('/user/{item}/editar', [UserController::class, 'edit'])->name('user.edit.ajax');
 Route::get('/user', [UserController::class, 'index'])->name('user');
+Route::patch('/user/{item}/actualizar', [UserController::class, 'update'])->name('user.update');
 //PEDIDOS
 Route::get('/orders', [OrdersController::class, 'index'])->name('orders');
 //COMPAÑÍA

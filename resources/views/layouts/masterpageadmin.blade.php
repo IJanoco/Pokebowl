@@ -135,7 +135,7 @@
       
     </div>
   </div>
-
+  @yield('modals')
   <!-- General JS Scripts -->
   <script src="{{asset('assetsadmin/dist/assets/modules/jquery.min.js')}}"></script>
   <script src="{{asset('assetsadmin/dist/assets/modules/popper.js')}}"></script>
