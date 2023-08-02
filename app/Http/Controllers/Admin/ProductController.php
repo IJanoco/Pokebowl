@@ -55,7 +55,7 @@ class ProductController extends Controller
         }
 
         Product::create($input);
-        return redirect('product');
+        return redirect('product')->with('flash_message', 'Added!');
     }   
 
     /**
@@ -112,7 +112,7 @@ class ProductController extends Controller
         }
 
         $product->update($input);
-        return redirect('product');
+        return redirect('product')->with('flash_message', 'Updated!');
     }
 
     /**
@@ -130,7 +130,7 @@ class ProductController extends Controller
         if(!empty($file)&& file_exists(public_path($file))){
             unlink(public_path($file));
         }
-        return redirect('product');
+        return redirect('product')->with('flash_message', 'deleted!');
     }
 
     public function delete($id)

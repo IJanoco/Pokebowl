@@ -40,7 +40,7 @@ class TypeProductController extends Controller
         $input = $request->all();
         
         Type_Product::create($input);
-        return redirect('typeproduct');
+        return redirect('typeproduct')->with('flash_message', 'Added!');
     }
 
     /**
@@ -77,7 +77,7 @@ class TypeProductController extends Controller
         $typeproducts = Type_Product::find($id);
         $input = $request->all();
         $typeproducts->update($input);
-        return redirect('typeproduct'); 
+        return redirect('typeproduct')->with('flash_message', 'Updated!'); 
     }
 
     /**
@@ -90,6 +90,6 @@ class TypeProductController extends Controller
     {
         $typeproducts = Type_Product::find($id);
         $typeproducts->delete();
-        return redirect('typeproduct');
+        return redirect('typeproduct')->with('flash_message', 'deleted!');
     }
 }

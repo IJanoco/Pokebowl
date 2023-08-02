@@ -64,10 +64,12 @@
 <script src="{{asset('assetsadmin/dist/assets/modules/modals.js')}}"></script>
 <script src="{{asset('assetsadmin/dist/assets/modules/datatables_now/dataTables.bootstrap4.min.js')}}"></script>
 <script src="{{asset('assetsadmin/dist/assets/modules/datatables_now/dataTables.min.js')}}"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="{{asset('assetsadmin/dist/assets/js/alerts.js')}}"></script>
 <script>
     new DataTable('#typeProducts');
 </script>
-
+@include('viewsadmin.alerts')
 @endsection
             
 @endsection
