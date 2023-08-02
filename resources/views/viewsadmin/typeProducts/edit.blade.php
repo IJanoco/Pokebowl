@@ -1,5 +1,5 @@
 <!--EDITAR TIPO DE PRODUCTO-->
-<div class="modal fade" id="editTypeProduct{{$item->id}}" tabindex="-1" aria-labelledby="EditarProducto" aria-hidden="true">
+<div class="modal fade" id="editTypeProduct" tabindex="-1" aria-labelledby="EditarTipoProducto" aria-hidden="true">
     <div class="modal-dialog" role="document">
     <div class="modal-content">
         <div class="modal-header">
@@ -8,17 +8,14 @@
             <span aria-hidden="true">&times;</span>
         </button>
         </div>
-        <form class="alertEdit" action="{{ url('typeproduct/'. $item->id ) }}" method="post">
+        <form class="alertEdit" id="edit-typeProducts-form" action="" method="post">
         <div class="modal-body">             
                 @csrf
         
-                @method("PATCH")
-        
-                <input type="hidden" name="id" id="id" value="{{$item->id}}"/>
-        
+                @method("PATCH")     
                 <label>Tipo:</label></br>
         
-                <input type="text" name="type" id="type" value="{{$item->type}}" class="form-control"></br>
+                <input type="text" name="type" value="" class="form-control type"></br>
                                 
         </div>
         <div class="modal-footer">

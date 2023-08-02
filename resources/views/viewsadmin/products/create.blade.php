@@ -8,7 +8,7 @@
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <form action="{{url('product')}}" method="post">
+        <form action="{{url('product')}}" method="post" enctype="multipart/form-data">
           <div class="modal-body">
                   @csrf
                   <label>Nombre:</label></br>

@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers\Admin;
 
-use Illuminate\Http\Request;
+use App\Models\Shopping_Cart;
 use App\Http\Controllers\Controller;
-use App\Models\Orders;
-class OrdersController extends Controller
+use Illuminate\Http\Request;
+
+class ShoppingCartController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +15,7 @@ class OrdersController extends Controller
      */
     public function index()
     {
-        $orders = Orders::all();
-        return view('viewsadmin.orders', ['orders' => $orders]);
+        return view('viewscustomer.shoppingcart');
     }
 
     /**

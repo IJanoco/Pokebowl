@@ -2,13 +2,13 @@
 (function( $ ){
     $('#editUser').on('shown.bs.modal', function(event){
         var button = $(event.relatedTarget)
-        var url = button.attr('data-url')
+        var url = button.data('url')
         var getDataLink = button.data('send')
         var modal = $(this)
-        console.log(url)
+        
         $.ajax({
             type: 'GET',
-            link: getDataLink,
+            url: getDataLink,
             dataType: 'JSON',
             success: function (data)
             {
@@ -36,7 +36,70 @@
             }
         })
         
-        modal.find('#edit-users-form').attr('action', 'string')
+        modal.find('#edit-users-form').attr('action', url)
 
     });
+
+    $('#editTypeProduct').on('shown.bs.modal', function(event){
+        var button = $(event.relatedTarget)
+        var url = button.data('url')
+        var getDataLink = button.data('send')
+        var modal = $(this)
+        
+        $.ajax({
+            type: 'GET',
+            url: getDataLink,
+            dataType: 'JSON',
+            success: function (data)
+            {
+                var type = data.type
+              
+
+                modal.find('.type').val(type)
+                
+
+            },
+            error: function(response){
+
+            }
+        })
+        
+        modal.find('#edit-typeProducts-form').attr('action', url)
+
+    });
+    $('#editProduct').on('shown.bs.modal', function(event){
+        var button = $(event.relatedTarget)
+        var url = button.data('url')
+        var getDataLink = button.data('send')
+        var modal = $(this)
+        
+        $.ajax({
+            type: 'GET',
+            url: getDataLink,
+            dataType: 'JSON',
+            success: function (data)
+            {
+                var name = data.name
+                var description = data.description
+                var price = data.price
+                var id_type = data.id_type
+                var url_img = data.url_img
+
+                modal.find('.name').val(name)
+                modal.find('.description').val(description)
+                modal.find('.price').val(price)
+                modal.find('.id_type').val(id_type)
+                modal.find('#previewImage').attr('src', url_img)
+
+            },
+            error: function(response){
+
+            }
+        })
+        
+        modal.find('#edit-products-form').attr('action', url)
+
+    });
+
+    
  })( jQuery );

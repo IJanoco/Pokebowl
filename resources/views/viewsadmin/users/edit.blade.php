@@ -1,4 +1,4 @@
- <!--EDITAR TIPO DE PRODUCTO-->
+ <!--EDITAR USUARIO-->
  <div class="modal fade" id="editUser" tabindex="-1" aria-labelledby="EditarUsuario" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
@@ -13,35 +13,54 @@
                   @csrf
           
                   @method("PATCH")
-          
-                  <label>Nombre:</label></br>
-          
-                  <input type="text" name="name" value="{{$item->name}}" class="form-control"></br>
-
-                  <label>Apellido:</label></br>
-          
-                  <input type="text" name="last_name" value="{{$item->last_name}}"  class="form-control"></br>
-          
+                  <div class="row">
+                    <div class="col-6">
+                      <label>Nombre:</label></br>
+              
+                      <input type="text" name="name" value="" class="form-control name"></br>
+                    </div>
+                    <div class="col-6">
+                      <label>Apellido:</label></br>
+              
+                      <input type="text" name="last_name" value=""  class="form-control last_name"></br>
+                    </div>
+                  </div>
                   <label>Correo:</label></br>
           
-                  <input type="email" name="email" value="{{$item->email}}"  class="form-control"></br>
+                  <input type="email" name="email" value=""  class="form-control email"></br>
 
-                  <label>Dirección:</label></br>
+                  <div class="row">
+                    <div class="col-6">                  
+                      <label>Teléfono:</label></br>
           
-                  <input type="text" name="address" value="{{$item->address}}"  class="form-control"></br>
+                      <input type="text" name="phone" value=""  class="form-control phone"></br>
+                    </div>
+                    <div class="col-6">
+                      <label>Código Postal:</label></br>
+            
+                      <input type="text" name="postal_code" value=""  class="form-control postal_code"></br>
+                    </div>
+                  </div>
+                      <label>Dirección:</label></br>
+            
+                      <input type="text" name="address" value=""  class="form-control address"></br>
+                  
+                      <div class="row">
+                        <div class="col-6">
+                          <label>DNI:</label></br>
+          
+                          <input type="text" name="dni" value=""   class="form-control dni"></br>
+        
+                        </div>
+                        <div class="col-6">
+                          <label>Tipo de Usuario:</label></br>
 
-                  <label>Código Postal:</label></br>
-          
-                  <input type="text" name="postal_code" value="{{$item->postal_code}}"  class="form-control"></br>
-
-                  <label>Teléfono:</label></br>
-          
-                  <input type="text" name="phone" value="{{$item->phone}}"  class="form-control"></br>
-
-                  <label>DNI:</label></br>
-          
-                  <input type="text" name="dni" value="{{$item->dni}}"   class="form-control"></br>
-                                  
+                          <input type="text" name="id_type" value="" class="form-control id_type"></br>
+                          
+                        </div>
+                      </div>
+                 
+                          
           </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>

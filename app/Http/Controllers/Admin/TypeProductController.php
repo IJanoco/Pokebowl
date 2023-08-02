@@ -60,9 +60,9 @@ class TypeProductController extends Controller
      * @param  \App\Models\Type_Product  $type_Product
      * @return \Illuminate\Http\Response
      */
-    public function edit(Type_Product $type_Product)
+    public function edit(Type_Product $item)
     {
-        //
+        return response()->json($item);
     }
 
     /**

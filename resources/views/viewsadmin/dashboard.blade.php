@@ -10,7 +10,7 @@
           </div>
           <div class="card-wrap">
             <div class="card-header">
-              <h4>Usuarios</h4>
+              <a href="{{ route('user') }}"><h4>Usuarios</h4></a>
             </div>
             <div class="card-body">
               10
@@ -26,7 +26,7 @@
           </div>
           <div class="card-wrap">
             <div class="card-header">
-              <h4>Tipo de Productos</h4>
+              <a href="{{ route('typeproduct') }}"><h4>Tipo de Productos</h4></a>
             </div>
             <div class="card-body">
               10
@@ -43,7 +43,7 @@
           </div>
           <div class="card-wrap">
             <div class="card-header">
-              <h4>Productos</h4>
+              <a href="{{ route('product') }}"><h4>Productos</h4></a>
             </div>
             <div class="card-body">
               10
@@ -58,7 +58,7 @@
           </div>
           <div class="card-wrap">
             <div class="card-header">
-              <h4>Pedidos</h4>
+              <a href="{{ route('orders') }}"><h4>Pedidos</h4></a>
             </div>
             <div class="card-body">
               10
@@ -75,7 +75,7 @@
         </div>
         <div class="card-wrap">
           <div class="card-header">
-            <h4>Boletas</h4>
+            <a href="{{ route('invoice') }}"><h4>Boletas</h4></a>
           </div>
           <div class="card-body">
             10
@@ -90,7 +90,7 @@
         </div>
         <div class="card-wrap">
           <div class="card-header">
-            <h4>Compañía</h4>
+            <a href="{{ route('company') }}"><h4>Compañía</h4></a>
           </div>
           <div class="card-body">
             10

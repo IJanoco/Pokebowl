@@ -1,5 +1,5 @@
   <!--EDITAR TIPO DE PRODUCTO-->
-  <div class="modal fade" id="editProduct{{$item->id}}" tabindex="-1" aria-labelledby="EditarProducto" aria-hidden="true">
+  <div class="modal fade" id="editProduct" tabindex="-1" aria-labelledby="EditarProducto" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -8,29 +8,28 @@
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <form class="alertEdit" action="{{ url('product/'. $item->id ) }}" method="post">
+        <form class="alertEdit" id="edit-products-form" action="" method="post" enctype="multipart/form-data">
           <div class="modal-body">             
                   @csrf
           
-                  @method("PATCH")
-          
-                  <input type="hidden" name="id" id="id" value="{{$item->id}}"/>
-          
+                  @method("PATCH")       
                   <label>Nombre:</label></br>
           
-                  <input type="text" name="name" id="name" value="{{$item->name}}" class="form-control"></br>
+                  <input type="text" name="name" id="name" value="" class="form-control name"></br>
           
                   <label>Descripción:</label></br>
           
-                  <input type="text" name="description" id="description" value="{{$item->description}}" class="form-control"></br>
+                  <input type="text" name="description" id="description" value="" class="form-control description"></br>
           
                   <label>Precio:</label></br>
           
-                  <input type="text" name="price" id="price" value="{{$item->price}}" class="form-control"></br>
+                  <input type="text" name="price" id="price" value="" class="form-control price"></br>
           
-                  <label>URL Imagen:</label></br>
+                  <label>Producto Imagen:</label></br>
           
-                  <input type="text" name="url_img" id="url_img" value="{{$item->url_img}}" class="form-control"></br>
+                  <input type="file" name="url_img" id="url_img" value="" class="form-control url_img" required></br>
+                  <img id="previewImage" class="avatar"
+                        alt="Vista previa de la imagen" src="">
                                   
           </div>
         <div class="modal-footer">

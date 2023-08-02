@@ -14,7 +14,7 @@
   <link rel="shortcut icon" href="{{asset('assetscustomer/img/poke-bowl-icon.png')}}" type="">
 
   <title> POKEBOWL YES! </title>
-
+@yield('css')
   <!-- bootstrap core css -->
   <link rel="stylesheet" type="text/css" href="{{asset('assetscustomer/css/bootstrap.css')}}" />
 
@@ -70,7 +70,7 @@
               <a href="{{route('login')}}" class="user_link">
                 <i class="fa fa-user" aria-hidden="true"></i>
               </a>
-              <a class="cart_link" href="#">
+              <a class="cart_link" href="{{route('shoppingcart')}}">
                 <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 456.029 456.029" style="enable-background:new 0 0 456.029 456.029;" xml:space="preserve">
                   <g>
                     <g>
@@ -264,7 +264,7 @@
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap">
   </script>
   <!-- End Google Map -->
-
+@yield('js')
 </body>
 
 </html>

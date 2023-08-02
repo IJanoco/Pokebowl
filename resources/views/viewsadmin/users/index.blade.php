@@ -4,26 +4,18 @@
 @section('css')
 <link rel="stylesheet" href="{{asset('assetsadmin/dist/assets/modules/datatables_now/dataTables.bootstrap4.min.css')}}">
 @endsection
-@include('viewsadmin.users.create')
+
 <div class="card">
-  <div class="card-header">
-    <div class="card-header-form col-4">
-      <form>
-        <div class="input-group">
-          <input type="text" class="form-control" placeholder="Search">
-          <div class="input-group-btn">
-            <button class="btn btn-primary"><i class="fas fa-search"></i></button>
-          </div>
-        </div>
-      </form>
-    </div>
-    <div class="d-flex justify-content-end col-8">
+ 
+    
+    
+  
+  <div class="card-body">   
+    <div class="d-flex justify-content-end">
       <button type="submit" class="btn btn-primary"  data-toggle="modal" data-target="#createUser">
         <span class="fas fa-user-plus"></span>
       </button>
-    </div>
-  </div>   
-  <div class="card-body">    
+    </div> 
       <table id="table" class="table table-striped table-bordered" style="width:100%">
             <thead class="bg-light">
                 <tr>
@@ -54,7 +46,7 @@
                 <td> {{$item->id_type}}</td>                   
                 <td>
                                                                        
-                    <button type="submit" class="btn-md btn-warning btn-fw" data-toggle="modal" data-url="{{ route('user.update', $item ) }}"
+                    <button type="submit" class="btn-md btn-warning btn-fw" data-toggle="modal" data-url="{{ url('user/'. $item->id ) }}"
                        data-target="#editUser" data-send="{{route('user.edit.ajax', $item)}}">
                         <span class="fas fa-pen"></span>     
                     </button>                      
@@ -77,8 +69,10 @@
 </div>
 @section('modals')
 @include('viewsadmin.users.edit')
+@include('viewsadmin.users.create')
 @endsection
 @section('js')
+<script src="{{asset('assetsadmin/dist/assets/modules/modals.js')}}"></script>
 <script src="{{asset('assetsadmin/dist/assets/modules/datatables_now/dataTables.bootstrap4.min.js')}}"></script>
 <script src="{{asset('assetsadmin/dist/assets/modules/datatables_now/dataTables.min.js')}}"></script>
 <script>

@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="{{asset('assetsadmin/dist/assets/modules/fontawesome/css/all.min.css')}}">
   
   @yield('css')
+
   <!-- CSS Libraries -->
   <link rel="stylesheet" href="{{asset('assetsadmin/dist/assets/modules/jqvmap/dist/jqvmap.min.css')}}">
   <link rel="stylesheet" href="{{asset('assetsadmin/dist/assets/modules/weather-icon/css/weather-icons.min.css')}}">
