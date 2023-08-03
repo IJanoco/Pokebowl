@@ -56,6 +56,7 @@ Route::get('/shopping', [ShoppingCartController::class, 'index'])->name('shoppin
 //PEDIDOS
 Route::get('/orders', [OrdersController::class, 'index'])->name('orders');
 //COMPAÑÍA
+Route::resource('/company', CompanyController::class);
 Route::get('/company', [CompanyController::class, 'index'])->name('company');
 //TIPO PRODUCTOS
 Route::resource('/typeproduct', TypeProductController::class);

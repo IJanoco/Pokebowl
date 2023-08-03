@@ -19,6 +19,7 @@ class CreateCompanyTable extends Migration
             $table->string('taxpayer');
             $table->string('email');
             $table->string('phone');
+            $table->string('district');
             $table->string('address');
             $table->string('url_logo');
             $table->timestamps();

@@ -8,4 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Company extends Model
 {
     use HasFactory;
+    protected $table = 'company';
+    protected $primarykey = 'id';
+    protected $fillable=['taxpayer','email','phone','district','address','url_logo'];
 }

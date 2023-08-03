@@ -4,7 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
-use App\Models\{User, Type_Users, Type_Product,Product};
+use App\Models\{User, Type_Users, Type_Product,Product,Company};
 class DatabaseSeeder extends Seeder
 {
     /**
@@ -212,6 +212,17 @@ class DatabaseSeeder extends Seeder
               'price'=>'6',
               'url_img'=>'https://www.popolopizzeria.com/cdn/shop/products/incaSA_per_1024x1024.jpg?v=1561405979',
               'id_type'=>'4'
+          ]);
+
+          Company::create([
+            'id' => '1',
+            'name' => 'POKEBOWL YES!',
+            'taxpayer' => '20745874455610',
+            'email' => 'pokebowlyes@gmail.com',
+            'phone' => '987654321',
+            'district' => 'San Isidro',
+            'address' => 'Mz. Isidoro lt2',
+            'url_logo' => 'none',
           ]);
   
         
