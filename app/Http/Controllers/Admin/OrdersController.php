@@ -14,7 +14,7 @@ class OrdersController extends Controller
      */
     public function index()
     {
-        $orders = Orders::all();
+        $orders = Orders::with(['product','user'])->get();
         return view('viewsadmin.orders', ['orders' => $orders]);
     }
 
@@ -70,7 +70,14 @@ class OrdersController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $invoice = Orders::find($id);
+        // Actualiza el tipo de entrega según el select
+
+        $newStatus = $request->input('new_type');
+        $invoice->delivery_type = $newStatus;
+        $invoice->save();
+        
+        return redirect('orders')->with('success', 'Estado de pago actualizado con éxito.');
     }
 
     /**

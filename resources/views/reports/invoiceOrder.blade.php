@@ -51,6 +51,7 @@
             display: grid;
             place-items: center;
             max-width: 100%;
+            
         }
 
         /* Estilos para los datos */
@@ -124,29 +125,20 @@
                 <p style="text-align: right;">Juan Perón </p>
             </div>
             <div class="dato dato1 datos-tlf">
-                <h3 style="text-align: left;">Telf:</h3>
+                <h3 style="text-align: left;">Teléfono:</h3>
                 <p style="text-align: rigth;">982945732</p>
             </div>
             <br><br><br><br><br>
             <div class="botones">
                 <h3>Forma de Recojo:</h3>
-                <button onclick="mostrarVista(1)">delivery</button>
-                <button onclick="mostrarVista(2)">recojo</button>
+             
             </div>
         </div>
         <div class="dato dato3">
-            <h3>Direccion de entrega:</h3>
+            <h3>Dirección de entrega:</h3>
+
         </div>
-        <div id="areaVistas" class="areaVistas">
-            <div id="vista1" class="vista">
-                <h1>Direccion de cliente</h1>
-                <p>Mz Blt 15 urb mercurio</p>
-            </div>
-            <div id="vista2" class="vista" style="display: none;">
-                <h1>Direccion de la Sucursal</h1>
-                <p>Av. los paltos-345 lince</p>
-            </div>
-        </div>
+        
         <div class="dato dato4 datos-pedido">
             <h3 style="text-align: left;">Mi Pedido</h3>
             <p style="text-align: rigth;">n° Pedido: B007-01</p>
@@ -162,27 +154,14 @@
             <p>InkaKola 500ml</p>
             <p>s/.4.50</p>
         </div>
-        <br><br><br><br><br><br><br><br>
+        <br><br><br>
         <div class="dato dato12">
             <p>Sub Total:S/.36.5</p>
             <p>Igv: S/6.57</p>
             <p>Total de la Compra:S/43.07</p>
         </div>
     </div>
-    <script>
-        function mostrarVista(numeroVista) {
-            var vistas = document.getElementsByClassName("vista");
-            var botones = document.getElementsByTagName("button");
-
-            for (var i = 0; i < vistas.length; i++) {
-                vistas[i].style.display = "none";
-                botones[i].classList.remove("active");
-            }
-
-            vistas[numeroVista - 1].style.display = "block";
-            botones[numeroVista - 1].classList.add("active");
-        }
-    </script>
+ 
 </body>
 
 </html>

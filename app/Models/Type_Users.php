@@ -13,6 +13,6 @@ class Type_Users extends Model
     protected $table = 'type_users';
     public function users()
     {
-        return $this-> hasMany(User::class, 'id_type', 'id');
+        return $this-> hasMany(User::class, 'id_type');
     }
 }

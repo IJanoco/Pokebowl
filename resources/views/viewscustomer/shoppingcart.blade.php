@@ -16,25 +16,6 @@
             <span class="precio-item">$15.000</span>
             <button class="boton-item">Agregar al Carrito</button>
         </div>
-        <div class="item">
-            <span class="titulo-item">English Horse</span>
-            <img src="{{asset('assetscustomer/cart/img/englishrose.png')}}" alt="" class="img-item">
-            <span class="precio-item">$25.000</span>
-            <button class="boton-item">Agregar al Carrito</button>
-        </div>
-        <div class="item">
-            <span class="titulo-item">Knock Nap</span>
-            <img src="{{asset('assetscustomer/cart/img/knocknap.png')}}" alt="" class="img-item">
-            <span class="precio-item">$35.000</span>
-            <button class="boton-item">Agregar al Carrito</button>
-        </div>
-        <div class="item">
-            <span class="titulo-item">La Night</span>
-            <img src="{{asset('assetscustomer/cart/img/lanight.png')}}" alt="" class="img-item">
-            <span class="precio-item">$18.000</span>
-            <button class="boton-item">Agregar al Carrito</button>
-        </div>
-        
     </div>
     <!-- Carrito de Compras -->
     <div class="carrito" id="carrito">

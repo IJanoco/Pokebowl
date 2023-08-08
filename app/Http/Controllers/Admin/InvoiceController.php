@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Barryvdh\DomPDF\Facade as PDF;
 
+use App\Models\Orders;
+
 class InvoiceController extends Controller
 {
     /**
@@ -15,7 +17,8 @@ class InvoiceController extends Controller
      */
     public function index()
     {
-        return view('viewsadmin.invoice');
+        $invoice = Orders::with(['product','user'])->get();
+        return view('viewsadmin.invoice',['invoice' => $invoice]);
     }
 
     /**
@@ -70,8 +73,19 @@ class InvoiceController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $invoice = Orders::find($id);
+        
+        // Actualiza el estado de pago según el select
+         
+            $newStatus = $request->input('new_status');
+            $invoice->status_pay = $newStatus;
+            $invoice->save();
+            
+            return redirect('invoice')->with('success', 'Estado de pago actualizado con éxito.');
+     
     }
+
+  
 
     /**
      * Remove the specified resource from storage.
@@ -96,4 +110,9 @@ class InvoiceController extends Controller
         //return $pdf->download($pdf_name);
        //return view ('reports.induccion');
     }
+
+   
+
+   
+
 }

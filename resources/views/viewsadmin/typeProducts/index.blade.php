@@ -16,7 +16,7 @@
                                     <span class="fas fa-plus"></span>
                                 </button>
                             </div>
-                            <thead class="bg-light">
+                            <thead class="bg-secondary">
                             <tr>
                                 <th> Id </th>
                                 <th> Tipo </th>
@@ -56,20 +56,25 @@
             </div>
 
 
-@section('modals')
-@include('viewsadmin.typeProducts.edit') 
-@include('viewsadmin.typeProducts.create')
-@endsection
+
 @section('js')
 <script src="{{asset('assetsadmin/dist/assets/modules/modals.js')}}"></script>
 <script src="{{asset('assetsadmin/dist/assets/modules/datatables_now/dataTables.bootstrap4.min.js')}}"></script>
 <script src="{{asset('assetsadmin/dist/assets/modules/datatables_now/dataTables.min.js')}}"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="{{asset('assetsadmin/dist/assets/js/alerts.js')}}"></script>
+<script src="{{asset('assetsadmin/dist/assets/js/hidenmodals.js')}}"></script>
+
 <script>
     new DataTable('#typeProducts');
 </script>
 @include('viewsadmin.alerts')
+@endsection
+
+@section('modals')
+@include('viewsadmin.typeProducts.create')
+@include('viewsadmin.typeProducts.edit') 
+
 @endsection
             
 @endsection

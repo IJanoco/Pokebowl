@@ -45,28 +45,20 @@
             
                       <input type="text" name="address" value=""  class="form-control address"></br>
                   
-                      <div class="row">
-                        <div class="col-6">
-                          <label>DNI:</label></br>
-          
-                          <input type="text" name="dni" value=""   class="form-control dni"></br>
-        
-                        </div>
-                        <div class="col-6">
-                          <label>Tipo de Usuario:</label></br>
-
-                          <input type="text" name="id_type" value="" class="form-control id_type"></br>
-                          
-                        </div>
-                      </div>
-                 
+                      
+                      <label>DNI:</label></br>
+      
+                      <input type="text" name="dni" value=""   class="form-control dni"></br>
+    
                           
           </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-          <button type="submit" class="btn btn-primary" value="Update">Guardar Cambios</button>
+          <button type="submit" class="btn btn-primary" id="save">Guardar Cambios</button>
         </div>
       </form>
       </div>
     </div>
   </div>
+ 
+

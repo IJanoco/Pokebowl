@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Product;
+use App\Models\Type_Product;
 use Barryvdh\DomPDF\Facade as PDF;
 class ProductController extends Controller
 {
@@ -14,10 +15,14 @@ class ProductController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-       
-        $products = Product::all();
-        return view('viewsadmin.products.index', ['products' => $products]);
+    {   
+        
+        $products = Product::with('type_product')->get();
+        $typeproducts = Type_Product::all();
+        return view('viewsadmin.products.index', [
+            'products' => $products,
+            'typeproducts' => $typeproducts
+        ]);
         
     }
 

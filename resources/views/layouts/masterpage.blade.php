@@ -67,7 +67,7 @@
              
             </ul>
             <div class="user_option">
-              <a href="{{route('login')}}" class="user_link">
+              <a href="{{route('userprofile')}}" class="user_link">
                 <i class="fa fa-user" aria-hidden="true"></i>
               </a>
               <a class="cart_link" href="{{route('shoppingcart')}}">
@@ -124,11 +124,7 @@
                   </g>
                 </svg>
               </a>
-              <form class="form-inline">
-                <a class="btn my-2 my-sm-0 nav_search-btn" href="{{route('reports.invoiceOrder')}}">
-                  <i class="fa fa-search" aria-hidden="true"></i>
-                </a>
-              </form>
+              
               <a class="text-white start-float" href="{{ route('logout') }}"
                   onclick="event.preventDefault();
                                 document.getElementById('logout-form').submit();">
@@ -199,8 +195,10 @@
               POKEBOWL YES!
             </a>
             <p>
-              Necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with
+              Prueba y disfruta nuestros deliciosos bowls, bebidas, ensaladas y postres.
+              Aquí podrás comprar tus productos de manera rápida y segura.
             </p>
+            <!--
             <div class="footer_social">
               <a href="">
                 <i class="fa fa-facebook" aria-hidden="true"></i>
@@ -218,6 +216,7 @@
                 <i class="fa fa-pinterest" aria-hidden="true"></i>
               </a>
             </div>
+            -->
           </div>
         </div>
         <div class="col-md-4 footer-col">
@@ -234,10 +233,8 @@
       </div>
       <div class="footer-info">
         <p>
-          &copy; <span id="displayYear"></span> All Rights Reserved By
-          <a href="https://html.design/">Free Html Templates</a><br><br>
-          &copy; <span id="displayYear"></span> Distributed By
-          <a href="https://themewagon.com/" target="_blank">ThemeWagon</a>
+          &copy; <span id="displayYear"></span> Todos los derechos reservados por POKEBOWL YES EXPRESS!
+      
         </p>
       </div>
     </div>

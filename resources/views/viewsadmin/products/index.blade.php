@@ -9,8 +9,6 @@
         <div class="card-body">
           <div class="table-responsive">
             
-              
-
             <br>
             <table id="productos" class="table table-striped table-bordered" style="width:100%"">
               <div class="d-flex justify-content-end">
@@ -18,7 +16,7 @@
                   <span class="fas fa-plus"></span>
                 </button>
               </div>
-              <thead class="bg-light" >
+              <thead class="bg-secondary" >
                 <tr>
                   <th> Id </th>
                   <th> Nombre </th>
@@ -39,7 +37,7 @@
                     <td> {{$item->name}} </td>
                     <td> {{$item->description}}</td>
                     <td> {{$item->price}} </td>
-                    <td> {{$item->id_type}}</td>  
+                    <td> {{$item->type_product->type}}</td>  
                     <td> <img src="{{$item->url_img}}" class="avatar" alt=""></td>                  
                     <td>                                                       
                         <button type="submit" class="btn-md btn-warning btn-fw alertEdit" data-toggle="modal" data-url="{{ url('product/'. $item->id ) }}"
@@ -52,7 +50,7 @@
                       @method('DELETE')
                       @csrf
                       <button type="submit" class="btn-md btn-danger btn-fw" data-toggle="modal" data-target="#deleteProduct{{$item->id}}">
-                        <span class="fas fa-trash"></span>
+                        <span class="fa fa-trash"></span>
                     </button>
                    
                   </form>
@@ -65,19 +63,23 @@
         </div>
       </div>
     </div>
-@section('modals')
-@include('viewsadmin.products.edit') 
-@include('viewsadmin.products.create')
-@endsection
+
 @section('js')
 <script src="{{asset('assetsadmin/dist/assets/modules/modals.js')}}"></script>
 <script src="{{asset('assetsadmin/dist/assets/modules/datatables_now/dataTables.bootstrap4.min.js')}}"></script>
 <script src="{{asset('assetsadmin/dist/assets/modules/datatables_now/dataTables.min.js')}}"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="{{asset('assetsadmin/dist/assets/js/alerts.js')}}"></script>
+<script src="{{asset('assetsadmin/dist/assets/js/hidenmodals.js')}}"></script>
+
 <script>
   new DataTable('#productos');
 </script>
 @include('viewsadmin.alerts')
 @endsection  
+@section('modals')
+@include('viewsadmin.products.create')
+@include('viewsadmin.products.edit') 
+
+@endsection
 @endsection

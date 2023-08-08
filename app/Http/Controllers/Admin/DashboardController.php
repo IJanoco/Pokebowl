@@ -4,7 +4,10 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-
+use App\Models\User;
+use App\Models\Type_Product;
+use App\Models\Product;
+use App\Models\Orders;
 class DashboardController extends Controller
 {
     /**
@@ -14,7 +17,19 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        return view('viewsadmin.dashboard');
+        //calcular total
+        $totalUsers = User::count();
+        $totalTypeProducts = Type_Product::count();
+        $totalProducts = Product::count();
+        $totalOrders = Orders::count();
+
+        return view('viewsadmin.dashboard', [
+            'totalUsers' => $totalUsers,
+            'totalTypeProducts' => $totalTypeProducts,
+            'totalProducts' => $totalProducts,
+            'totalOrders' => $totalOrders
+        ]);
+        
     }
 
     /**

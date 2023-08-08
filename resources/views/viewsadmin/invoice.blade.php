@@ -1,38 +1,81 @@
 @extends('layouts.masterpageadmin')
 
 @section('content')
-<div class="col-12 grid-margin stretch-card ">
-    <div class="card">
+
+  @section('css')
+  <link rel="stylesheet" href="{{asset('assetsadmin/dist/assets/modules/datatables_now/dataTables.bootstrap4.min.css')}}">
+  @endsection
+  <div class="col-12 grid-margin stretch-card">
+      
+    <div class="card">        
       <div class="card-body">
-        
-        <div class="table-responsive ">
-          <table class="table text-white ">
-            <thead>
+        <div class="table-responsive">
+  
+          <table id="invoice" class="table table-striped table-bordered" style="width:100%">        
+            </div>
+            <thead class="bg-secondary" >
               <tr>
-                <th>Nombre</th>
-                <th>No. Boleta</th>
-                <th>Created</th>
-                <th>Estado</th>
+                <th> # </th>
+                <th> Cliente </th>               
+                <th> Productos</th>
+                <th> Total </th>
+                <th> Estado de Pago </th>
               </tr>
             </thead>
+            
             <tbody>
-              <tr>
-                <td>Jacob</td>
-                <td>53275531</td>
-                <td>12 May 2017</td>
-                <td><label class="badge badge-danger">Pending</label></td>
-              </tr>            
-              <tr>
-                <td>Peter</td>
-                <td>53275534</td>
-                <td>16 May 2017</td>
-                <td><label class="badge badge-success">Completed</label></td>
-              </tr>
-              
+              @foreach($invoice as $item)
+  
+                <tr>
+                  <td> {{$loop ->iteration}} </td>
+                  <td> {{$item->user->name}} </td>                 
+                  <td>
+                    <select name="selected_product" class="form-control form-control-sm">
+                      <option value="" disabled selected>Ver lista de productos</option>
+                      @foreach ($item->product as $product)
+                          <option value="{{ $product->id }}">
+                              {{ $product->name }} (Cantidad: {{ $product->pivot->quantity }}) 
+                              Precio Unitario: {{ number_format($product->price, 2) }} 
+                              Subtotal: {{ number_format($product->price * $product->pivot->quantity, 2) }}
+                          </option>
+                      @endforeach
+                    </select>
+                  </td>
+                  <td> 
+                    S/{{ number_format($item->product->sum(function($product) {
+                      return $product->price * $product->pivot->quantity;
+                      }), 2) }}
+                       
+                   </td>
+                  <td>      
+                            <form action="{{url('invoice/'. $item->id) }}" method="POST">
+                              @csrf
+                              @method("PATCH")
+                              <div class="input-group">
+                                <select class="custom-select" name="new_status">
+                                  <option value="Pendiente" {{ $item->status_pay === 'Pendiente' ? 'selected' : '' }}>Pendiente</option>
+                                  <option value="Cancelado" {{ $item->status_pay === 'Cancelado' ? 'selected' : '' }}>Cancelado</option>
+                                </select>
+                                <div class="input-group-append">
+                                  <button class="btn btn-danger fas fa-check" type="submit"></button>
+                                </div>
+                              </div>
+                          </form>
+                  </td>                     
+                </tr>
+              @endforeach
             </tbody>
+            
           </table>
         </div>
       </div>
     </div>
   </div>
+  @section('js')
+  <script src="{{asset('assetsadmin/dist/assets/modules/datatables_now/dataTables.bootstrap4.min.js')}}"></script>
+  <script src="{{asset('assetsadmin/dist/assets/modules/datatables_now/dataTables.min.js')}}"></script>
+  <script>
+    new DataTable('#invoice');
+  </script>
+  @endsection
 @endsection

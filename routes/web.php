@@ -35,38 +35,54 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::resource('/menu', MenuController::class);
+Route::group(['middleware'=>['auth', 'verify.role:admin']], function(){
+    //ADMIN VIEWS
+
+    //DASHBOARD
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+    //REPORTE
+    Route::resource('/invoice', InvoiceController::class);
+    Route::get('/invoice', [InvoiceController::class, 'index'])->name('invoice');
+
+    //TIPO USUARIOS
+
+    //USUARIOS
+    Route::resource('/user', UserController::class);
+    Route::get('/user/{item}/editar', [UserController::class, 'edit'])->name('user.edit.ajax');
+    Route::get('/user', [UserController::class, 'index'])->name('user');
 
 
-//ADMIN VIEWS
-Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+    //PEDIDOS
+    Route::resource('/orders', OrdersController::class);
+    Route::get('/orders', [OrdersController::class, 'index'])->name('orders');
+    //COMPAÑÍA
+    Route::resource('/company', CompanyController::class);
+    Route::get('/company', [CompanyController::class, 'index'])->name('company');
+    //TIPO PRODUCTOS
+    Route::resource('/typeproduct', TypeProductController::class);
+    Route::get('/typeproduct/{item}/editar', [TypeProductController::class,'edit'])->name('typeproduct.edit.ajax');
+    Route::get('/typeproduct', [TypeProductController::class,'index'])->name('typeproduct');
+    //PRODUCTOS
+    Route::resource('/product', ProductController::class);
+    Route::get('/product', [ProductController::class, 'index'])->name('product');
+    Route::get('/product/{item}/editar', [ProductController::class, 'edit'])->name('product.edit.ajax');
+});
 
-//REPORTE
-Route::get('/invoice', [InvoiceController::class, 'index'])->name('invoice');
+
+//CLIENTE
+
+//REPORTE CLIENTE
 Route::get('/reports-invoice',[InvoiceController::class, 'ReportInvoice'])->name('reports.invoiceOrder');
-//TIPO USUARIOS
-
-//USUARIOS
-Route::resource('/user', UserController::class);
-Route::get('/user/{item}/editar', [UserController::class, 'edit'])->name('user.edit.ajax');
-Route::get('/user', [UserController::class, 'index'])->name('user');
+//PERFIL
+Route::get('/user2', [UserController::class, 'index2'])->name('userprofile');
+Route::patch('/user/{item}/editar', [UserController::class, 'update2'])->name('edit.profile');
+//HOME
+Route::get('/home', [HomeController::class, 'index'])->name('home');
+//MENU
+Route::resource('/menu', MenuController::class);
+Route::get('/menu', [MenuController::class, 'index'])->name('menu');
+//ABOUT
+Route::get('/about', [AboutController::class, 'index'])->name('about');
 //CARRITO DE COMPRAS
 Route::resource('/shopping', ShoppingCartController::class);
 Route::get('/shopping', [ShoppingCartController::class, 'index'])->name('shoppingcart');
-//PEDIDOS
-Route::get('/orders', [OrdersController::class, 'index'])->name('orders');
-//COMPAÑÍA
-Route::resource('/company', CompanyController::class);
-Route::get('/company', [CompanyController::class, 'index'])->name('company');
-//TIPO PRODUCTOS
-Route::resource('/typeproduct', TypeProductController::class);
-Route::get('/typeproduct/{item}/editar', [TypeProductController::class,'edit'])->name('typeproduct.edit.ajax');
-Route::get('/typeproduct', [TypeProductController::class,'index'])->name('typeproduct');
-//PRODUCTOS
-Route::resource('/product', ProductController::class);
-Route::get('/product', [ProductController::class, 'index'])->name('product');
-Route::get('/product/{item}/editar', [ProductController::class, 'edit'])->name('product.edit.ajax');
-//CLIENTE
-Route::get('/home', [HomeController::class, 'index'])->name('home');
-Route::get('/menu', [MenuController::class, 'index'])->name('menu');
-Route::get('/about', [AboutController::class, 'index'])->name('about');

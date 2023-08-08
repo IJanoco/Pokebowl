@@ -15,9 +15,9 @@ class CreateOrdersTable extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
-            $table->boolean('delivery_type');
+            $table->string('delivery_type');
             $table->foreignId('id_customer')->constrained('users');
-            $table->boolean('status_pay');
+            $table->string('status_pay');
             $table->timestamps();
         });
     }

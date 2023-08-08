@@ -3,12 +3,13 @@ $('.alertDelete').submit(function(e){
   
     Swal.fire({
     title: '¿Estás seguro de la eliminación?',
-    text: "¡Esto no se podrá revertir!",
+    text: "¡Esta acción no se podrá revertir!",
     icon: 'warning',
     showCancelButton: true,
+    cancelButtonText: 'Cancelar',
     confirmButtonColor: '#3085d6',
     cancelButtonColor: '#d33',
-    confirmButtonText: '¡Sí, eliminarlo!'
+    confirmButtonText: '¡Confirmar eliminación!'
     }).then((result) => {
     if (result.isConfirmed) {
         this.submit();
@@ -20,12 +21,13 @@ $('.alertDelete').submit(function(e){
   
     Swal.fire({
     title: '¿Guardar cambios?',
-    text: "¿Está seguro de actualizar?",
+    text: "¿Está seguro de la actualización?",
     icon: 'info',
     showCancelButton: true,
+    cancelButtonText: 'Cancelar',
     confirmButtonColor: '#3085d6',
     cancelButtonColor: '#d33',
-    confirmButtonText: '¡Sí, actualizar!'
+    confirmButtonText: '¡Confirmar actualización!'
     }).then((result) => {
     if (result.isConfirmed) {
         this.submit();

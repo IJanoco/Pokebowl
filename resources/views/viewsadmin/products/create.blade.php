@@ -1,5 +1,5 @@
 <!--MODAL REGISTRAR PRODUCTO-->
-<div class="modal fade" id="createProduct" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+<div class="modal fade" id="createProduct" tabindex="-1" role="dialog" aria-labelledby="CrearProducto" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -26,8 +26,13 @@
                   <label>Imagen:</label></br>
                   <input type="file" name="url_img" id="url_img" class="form-control"></br>
                   
-                  <input type="hidden" name="id_type" value="3" class="form-control">
-
+                  <label for="tipo_producto">Tipo de Producto:</label></br>
+                  <select name="id_type" id="id_type" class="form-control">
+                    <option value="" disabled selected>Seleccionar tipo de producto</option>
+                      @foreach ($typeproducts as $item)
+                          <option value="{{ $item->id }}">{{ $item->type }}</option>
+                      @endforeach
+                  </select>
                   
           </div>
         <div class="modal-footer">

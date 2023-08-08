@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use App\Models\Type_Users;
 class UserController extends Controller
 {
     /**
@@ -14,8 +15,12 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = User::all();
-        return view('viewsadmin.users.index', ['users' => $users]);
+        $users = User::with('type_user')->get();
+        $typeusers = Type_Users::all();
+        return view('viewsadmin.users.index', [
+            'users' => $users,
+            'typeusers' => $typeusers
+        ]);
     }
 
     /**
@@ -53,7 +58,7 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        //
+       //
     }
 
     /**
@@ -82,6 +87,19 @@ class UserController extends Controller
         return redirect('user')->with('flash_message', 'Updated!');
     }
 
+    public function update2(Request $request, $id)
+    {
+        $users = User::find($id);
+        $input = $request->all();
+        $users->update($input);
+        return redirect('user2')->with('flash_message', 'Updated!');
+    }
+
+    public function index2()
+    {
+        
+        return view('viewscustomer.profile.index');
+    }
     /**
      * Remove the specified resource from storage.
      *
@@ -94,5 +112,7 @@ class UserController extends Controller
         $users->delete();
         return redirect('user')->with('flash_message', 'deleted!');
     }
+
+    
   
 }

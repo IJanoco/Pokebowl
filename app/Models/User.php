@@ -43,4 +43,9 @@ class User extends Authenticatable
     {
         return $this-> belongsTo(Type_Users::class, 'id_type', 'id');
     }
+
+    public function orders()
+    {
+        return $this->hasMany(Order::class, 'id_customer');
+    }
 }
