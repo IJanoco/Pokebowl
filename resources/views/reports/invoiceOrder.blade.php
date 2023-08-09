@@ -9,6 +9,7 @@
         /* Estilos generales */
         body {
             font-family: 'Roboto', sans-serif;
+            font-size: 11px;
             margin: 0;
         }
 
@@ -16,7 +17,7 @@
             max-width: 100%;
             margin: 0 auto;
             padding: 20px;
-            border: 2px black solid;
+            
         }
 
         /* Estilos para los botones */
@@ -60,11 +61,6 @@
             flex-wrap: wrap;
             justify-content: space-between;
         }
-
-        .dato {
-            width: 100%;
-        }
-
         /* Estilos para las imágenes */
         .dato img {
             max-width: 100%;
@@ -91,7 +87,7 @@
                 display: flex;
                 justify-content: space-between;
             }
-
+      
             .datos-pedido {
                 display: flex;
                 justify-content: space-between;
@@ -116,46 +112,73 @@
 
 <body>
     <div class="container2">
-        <div class="datos-container">
-            <div class="img">
-                <img src="img/encabezado.png" width="620px" height="250px" alt="">
-            </div>
-            <div class="dato dato1 datos-cliente">
-                <h3 style="text-align: left;">Datos del Cliente:</h3>
-                <p style="text-align: right;">Juan Perón </p>
-            </div>
-            <div class="dato dato1 datos-tlf">
-                <h3 style="text-align: left;">Teléfono:</h3>
-                <p style="text-align: rigth;">982945732</p>
-            </div>
-            <br><br><br><br><br>
-            <div class="botones">
-                <h3>Forma de Recojo:</h3>
-             
-            </div>
-        </div>
-        <div class="dato dato3">
-            <h3>Dirección de entrega:</h3>
-
-        </div>
         
-        <div class="dato dato4 datos-pedido">
-            <h3 style="text-align: left;">Mi Pedido</h3>
-            <p style="text-align: rigth;">n° Pedido: B007-01</p>
+            <div class="img">
+                <img src="img/encabezado.png" width="100%" height="200px" alt="">
+            </div>
+            <div style="width: 100%; display:flex;">
+                <div style="width: 50%; float:left; display:flex; justify-content:start;">
+                    <h3 style="text-align: left;">Datos del Cliente:</h3>
+                </div>
+                <div style="width: 50%; float:right; display:flex; justify-content:end;">
+                    <p style="text-align: right;">Juan Perón </p>
+                </div>
+            </div>
+            <br><br>
+            <div style="width: 100%; display:flex;">
+                <div style="width: 50%; float:right; display:flex; justify-content:start;">
+                    <h3 style="text-align: left;">Teléfono:</h3>
+                </div>
+                <div style="width: 50%; float:left; display:flex; justify-content:end;">
+                    <p style="text-align: right;">982945732</p>
+                </div>
+            </div>
+            
+        
+        <br><br>
+        
+            <div style="width: 100%; display:flex;">
+                <div style="width: 50%; float:right; display:flex; justify-content:start;">
+                    <h3 style="text-align: left;">Forma de Recojo:</h3>
+                </div>
+                <div style="width: 50%; float:left; display:flex; justify-content:end;">
+                    <p style="text-align: right;">En tienda</p>
+                </div>
+            </div>
+            <br><br>
+            <div style="width: 100%; display:flex;">
+                <div style="width: 50%; float:right; display:flex; justify-content:start; ">
+                    <h3 style="text-align: left;">Dirección de entrega:</h3>
+                </div>
+                <div style="width: 50%; float:left; display:flex; justify-content:end;">
+                    <p style="text-align: right;">Av. Por ahí</p>
+                </div>
+            </div>
+        <br><br>
+        <div style="width: 100%; display:flex;">
+            <div style="width: 50%; float:right; display:flex; justify-content:start; ">
+                <h3 style="text-align: left;">Mi Pedido:</h3>
+            </div>
+            <div style="width: 50%; float:left; display:flex; justify-content:end;">
+                <p style="text-align: right;">n° Pedido: B007-01</p>
+            </div>
         </div>
+        <br>
         <div class="dato dato5">
-            <img src="img/hawaiano.png" width="200px" height="250px" alt="">
+            
+            <img src="img/hawaiano.png" style="float:right; bottom:10px; width:100px; height:100px;" alt="">
             <p>Poke-bowl de salmon hawaiano</p>
             <p>s/.32.00</p>
         </div>
-        <br><br><br><br><br><br><br><br>
+        <br><br><br><br><br>
         <div class="dato dato9">
-            <img src="img/inkakola.png" width="200px" height="300px" alt="">
+            
+            <img src="img/inkakola.png" style="float:right; bottom:10px; width:100px; height:100px;"  alt="">
             <p>InkaKola 500ml</p>
             <p>s/.4.50</p>
         </div>
         <br><br><br>
-        <div class="dato dato12">
+        <div class="dato dato12" >
             <p>Sub Total:S/.36.5</p>
             <p>Igv: S/6.57</p>
             <p>Total de la Compra:S/43.07</p>
