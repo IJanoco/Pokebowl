@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\{Type_Product, Orders};
+use App\Models\{Type_Product, Orders, User};
 
 
 class Product extends Model
@@ -30,5 +30,10 @@ class Product extends Model
     public function type_product()
     {
         return $this-> belongsTo(Type_Product::class, 'id_type');
+    }
+    public function users()
+    {
+        return $this-> belongsToMany(User::class, 'shopping_cart', 'id_product', 'id_customer')
+                                    ->withPivot('quantity')->withTimestamps();
     }
 }

@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Product;
 use App\Models\Type_Product;
 use Barryvdh\DomPDF\Facade as PDF;
+
 class ProductController extends Controller
 {
     /**

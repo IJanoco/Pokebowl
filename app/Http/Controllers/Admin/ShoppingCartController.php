@@ -5,7 +5,8 @@ namespace App\Http\Controllers\Admin;
 use App\Models\Shopping_Cart;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-
+use Gloudemans\Shoppingcart\Facades\Cart;
+use App\Models\{User, Product};
 class ShoppingCartController extends Controller
 {
     /**
@@ -15,7 +16,9 @@ class ShoppingCartController extends Controller
      */
     public function index()
     {
-        return view('viewscustomer.shoppingcart');
+        $cartCollection = \Cart::getContent();
+        //dd($cartCollection);
+        return view('viewscustomer.shoppingcart', ['cartCollection' => $cartCollection]);
         
     }
 
@@ -37,7 +40,27 @@ class ShoppingCartController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        \Cart::add(array(
+            'id' => $request->id,
+            'name' => $request->name,
+            'price' => $request->price,
+            'quantity' => $request->quantity,
+            'attributes' => array(
+                    'image' => $request->img
+                )
+       
+    
+
+
+            
+        ));
+        return redirect()->route('shoppingcart')->with('success_msg', 'Item Agregado a su Carrito!');
+
+    }
+
+    public function remove(Request $request){
+        \Cart::remove($request->id);
+        return redirect()->route('shoppingcart')->with('success_msg', 'Item is removed!');
     }
 
     /**
@@ -69,9 +92,17 @@ class ShoppingCartController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+        \Cart::update($request->id,
+        array(
+            'quantity' => array(
+                'relative' => false,
+                'value' => $request->quantity
+            ),
+         ));
+        return redirect()->route('shoppingcart')->with('success_msg', 'Cart is Updated!');
+
     }
 
     /**
@@ -84,4 +115,9 @@ class ShoppingCartController extends Controller
     {
         //
     }
+    public function clear(){
+        \Cart::clear();
+        return redirect()->route('shoppingcart')->with('success_msg', 'Car is cleared!');
+    }
+
 }

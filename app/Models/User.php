@@ -48,4 +48,10 @@ class User extends Authenticatable
     {
         return $this->hasMany(Order::class, 'id_customer');
     }
+
+    public function Users()
+    {
+        return $this-> belongsToMany(Product::class, 'shopping_cart', 'id_customer', 'id_product')
+                                    ->withPivot('quantity')->withTimestamps();
+    }
 }

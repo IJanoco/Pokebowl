@@ -81,8 +81,13 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 //MENU
 Route::resource('/menu', MenuController::class);
 Route::get('/menu', [MenuController::class, 'index'])->name('menu');
+
 //ABOUT
 Route::get('/about', [AboutController::class, 'index'])->name('about');
 //CARRITO DE COMPRAS
 Route::resource('/shopping', ShoppingCartController::class);
 Route::get('/shopping', [ShoppingCartController::class, 'index'])->name('shoppingcart');
+Route::post('/add', [ShoppingCartController::class, 'store'])->name('cart.store');
+Route::post('/update', [ShoppingCartController::class, 'update'])->name('cart.update');
+Route::post('/remove', [ShoppingCartController::class, 'remove'])->name('cart.remove');
+Route::post('/clear', [ShoppingCartController::class, 'clear'])->name('cart.clear');
