@@ -5,6 +5,7 @@ use App\Http\Controllers\Customer\{
     AboutController,
     HomeController,
     MenuController,
+    ShoppingCartController,
 };
 
 use App\Http\Controllers\Admin\{
@@ -15,7 +16,7 @@ use App\Http\Controllers\Admin\{
     ProductController,
     UserController,
     TypeProductController,
-    ShoppingCartController,
+    
 
 };
 /*
@@ -88,6 +89,3 @@ Route::get('/about', [AboutController::class, 'index'])->name('about');
 Route::resource('/shopping', ShoppingCartController::class);
 Route::get('/shopping', [ShoppingCartController::class, 'index'])->name('shoppingcart');
 Route::post('/add', [ShoppingCartController::class, 'store'])->name('cart.store');
-Route::post('/update', [ShoppingCartController::class, 'update'])->name('cart.update');
-Route::post('/remove', [ShoppingCartController::class, 'remove'])->name('cart.remove');
-Route::post('/clear', [ShoppingCartController::class, 'clear'])->name('cart.clear');

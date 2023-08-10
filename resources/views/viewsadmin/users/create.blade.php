@@ -15,44 +15,44 @@
                     <div class="col-6">
                       <label>Nombre:</label></br>
               
-                      <input type="text" name="name" class="form-control"></br>
+                      <input type="text" name="name" class="form-control" required></br>
                     </div>
                     <div class="col-6">
                       <label>Apellido:</label></br>
               
-                      <input type="text" name="last_name" class="form-control"></br>
+                      <input type="text" name="last_name" class="form-control" required></br>
                     </div>
                   </div>
                   <label>Correo:</label></br>
           
-                  <input type="email" name="email" class="form-control"></br>
+                  <input type="email" name="email" class="form-control" required></br>
 
                   <div class="row">
                     <div class="col-6">
                       <label>Contraseña:</label></br>
           
-                      <input type="password" name="password" class="form-control"></br>
+                      <input type="password" name="password" class="form-control" required></br>
                     </div>
                     <div class="col-6">
                       <label>Confirmar Contraseña</label></br>
 
-                      <input type="password" class="form-control" name="password_confirmation" required autocomplete="new-password"></br>
+                      <input type="password" class="form-control" name="password_confirmation" required autocomplete="new-password" required></br>
                     </div>
                   </div>
                   <label>Dirección:</label></br>
           
-                  <input type="text" name="address" class="form-control"></br>
+                  <input type="text" name="address" class="form-control" required></br>
 
                   <div class="row">
                     <div class="col-6">
                       <label>Código Postal:</label></br>
           
-                      <input type="text" name="postal_code" class="form-control"></br>
+                      <input type="text" name="postal_code" class="form-control" required></br>
                     </div>
                     <div class="col-6">
                       <label>Teléfono:</label></br>
           
-                      <input type="text" name="phone" class="form-control"></br>
+                      <input type="text" name="phone" class="form-control" required></br>
                     </div>
                   </div>
                   
@@ -60,12 +60,12 @@
                     <div class="col-6">
                       <label>DNI:</label></br>
           
-                    <input type="text" name="dni" class="form-control"></br>
+                    <input type="text" name="dni" class="form-control" required></br>
                     </div>
                     <div class="col-6">
                       <label>Tipo de Usuario:</label></br>
 
-                      <select name="id_type" id="id_type" class="form-control">
+                      <select name="id_type" id="id_type" class="form-control" required>
                         <option value="" disabled selected>Seleccionar usuario</option>
                         @foreach ($typeusers as $item)
                             <option value="{{ $item->id }}">{{ $item->type }}</option>

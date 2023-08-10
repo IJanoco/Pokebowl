@@ -13,21 +13,21 @@
                   @csrf
                   <label>Nombre:</label></br>
           
-                  <input type="text" name="name" id="name"  class="form-control"></br>
+                  <input type="text" name="name" id="name"  class="form-control" required></br>
           
                   <label>Descripción:</label></br>
           
-                  <input type="text" name="description" id="description" class="form-control"></br>
+                  <input type="text" name="description" id="description" class="form-control" required></br>
           
                   <label>Precio:</label></br>
           
-                  <input type="text" name="price" id="price" class="form-control"></br>
+                  <input type="text" name="price" id="price" class="form-control" required></br>
           
                   <label>Imagen:</label></br>
-                  <input type="file" name="url_img" id="url_img" class="form-control"></br>
+                  <input type="file" name="url_img" id="url_img" class="form-control" required></br>
                   
                   <label for="tipo_producto">Tipo de Producto:</label></br>
-                  <select name="id_type" id="id_type" class="form-control">
+                  <select name="id_type" id="id_type" class="form-control" required>
                     <option value="" disabled selected>Seleccionar tipo de producto</option>
                       @foreach ($typeproducts as $item)
                           <option value="{{ $item->id }}">{{ $item->type }}</option>

@@ -1,12 +1,13 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\Customer;
 
-use App\Models\Shopping_Cart;
+
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Gloudemans\Shoppingcart\Facades\Cart;
-use App\Models\{User, Product};
+use Illuminate\Support\Facades\Auth;
+use App\Models\{User, Product, Shopping_Cart};
+
 class ShoppingCartController extends Controller
 {
     /**
@@ -15,12 +16,13 @@ class ShoppingCartController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        $cartCollection = \Cart::getContent();
-        //dd($cartCollection);
-        return view('viewscustomer.shoppingcart', ['cartCollection' => $cartCollection]);
+    {   
+        $user = Auth::user();
+        $cart = $user->shoppingCarts->load('product');
+        return view('viewscustomer.shoppingcart', ['cart' => $cart]);
         
     }
+ 
 
     /**
      * Show the form for creating a new resource.
@@ -40,27 +42,27 @@ class ShoppingCartController extends Controller
      */
     public function store(Request $request)
     {
-        \Cart::add(array(
-            'id' => $request->id,
-            'name' => $request->name,
-            'price' => $request->price,
-            'quantity' => $request->quantity,
-            'attributes' => array(
-                    'image' => $request->img
-                )
-       
-    
+        $product_id = $request->input('id_product');
+        $product_qty = $request->input('product_qty');
 
+        $prod_check = Product::where('id', $product_id)->first();
+        if($prod_check)
+        {
+            if(Shopping_Cart::where('id_product', $product_id)->where('id_customer', Auth::id())->exists())
+            {
+                return response()->json(['flash_message'=> 'Check!']);
+            }
+            else
+            {
+                $cartItem = new Shopping_Cart();
+                $cartItem->quantity = $product_qty;
+                $cartItem->id_customer = Auth::id();
+                $cartItem->id_product = $product_id;
+                $cartItem->save();
+                return response()->json(['flash_message'=> 'AddedCart!']);
 
-            
-        ));
-        return redirect()->route('shoppingcart')->with('success_msg', 'Item Agregado a su Carrito!');
-
-    }
-
-    public function remove(Request $request){
-        \Cart::remove($request->id);
-        return redirect()->route('shoppingcart')->with('success_msg', 'Item is removed!');
+            }
+        }
     }
 
     /**
@@ -94,15 +96,7 @@ class ShoppingCartController extends Controller
      */
     public function update(Request $request)
     {
-        \Cart::update($request->id,
-        array(
-            'quantity' => array(
-                'relative' => false,
-                'value' => $request->quantity
-            ),
-         ));
-        return redirect()->route('shoppingcart')->with('success_msg', 'Cart is Updated!');
-
+       //
     }
 
     /**
@@ -114,10 +108,6 @@ class ShoppingCartController extends Controller
     public function destroy($id)
     {
         //
-    }
-    public function clear(){
-        \Cart::clear();
-        return redirect()->route('shoppingcart')->with('success_msg', 'Car is cleared!');
     }
 
 }

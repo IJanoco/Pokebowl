@@ -6,7 +6,7 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-use App\Models\Type_Users;
+use App\Models\{Type_Users, Product, Shopping_Cart};
 
 class User extends Authenticatable
 {
@@ -49,9 +49,13 @@ class User extends Authenticatable
         return $this->hasMany(Order::class, 'id_customer');
     }
 
-    public function Users()
+    public function products()
     {
         return $this-> belongsToMany(Product::class, 'shopping_cart', 'id_customer', 'id_product')
                                     ->withPivot('quantity')->withTimestamps();
+    }
+    public function shoppingCarts()
+    {
+        return $this->hasMany(Shopping_Cart::class, 'id_customer');
     }
 }

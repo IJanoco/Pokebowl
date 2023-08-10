@@ -13,7 +13,7 @@
                   @csrf
                   <label>Tipo:</label></br>
           
-                  <input type="text" name="type" id="type"  class="form-control"></br>
+                  <input type="text" name="type" id="type"  class="form-control" required></br>
           
           </div>
         <div class="modal-footer">
