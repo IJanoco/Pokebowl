@@ -2,7 +2,7 @@
 
 @section('content')
 @section('css')
-<link rel="stylesheet" href="{{asset('assetsadmin/dist/assets/modules/datatables_now/dataTables.bootstrap4.min.css')}}">
+<link rel="stylesheet" href="//cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
 @endsection
 <div class="col-12 grid-margin stretch-card">
     
@@ -10,7 +10,7 @@
     <div class="card-body">
       <div class="table-responsive">
 
-        <table id="orders" class="table table-striped table-bordered" style="width:100%">        
+        <table id="orders" class="table table-striped table-bordered data-table" style="width:100%">        
           
             <thead class="bg-secondary" >
               <tr>

@@ -73,7 +73,7 @@ Route::group(['middleware'=>['auth', 'verify.role:admin']], function(){
 //CLIENTE
 
 //REPORTE CLIENTE
-Route::get('/reports-invoice',[InvoiceController::class, 'ReportInvoice'])->name('reports.invoiceOrder');
+Route::get('/reports-invoice',[ShoppingCartController::class, 'ReportInvoice'])->name('reports.invoiceOrder');
 //PERFIL
 Route::get('/user2', [UserController::class, 'index2'])->name('userprofile');
 Route::patch('/user/{item}/editar', [UserController::class, 'update2'])->name('edit.profile');
@@ -89,3 +89,6 @@ Route::get('/about', [AboutController::class, 'index'])->name('about');
 Route::resource('/shopping', ShoppingCartController::class);
 Route::get('/shopping', [ShoppingCartController::class, 'index'])->name('shoppingcart');
 Route::post('/add', [ShoppingCartController::class, 'store'])->name('cart.store');
+Route::post('/remove', [ShoppingCartController::class, 'deleteProduct'])->name('remove.product');
+Route::post('/ordercreate', [ShoppingCartController::class, 'createOrder'])->name('order.create');
+Route::post('/update-subtotal', [ShoppingCartController::class, 'updateSubtotal'])->name('update.subtotal');

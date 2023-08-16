@@ -30,9 +30,17 @@ class UserController extends Controller
      */
     public function create()
     {
-        $input = $request->all();
-        
-        User::create($input);
+        User::create([
+            'name' => $request['name'],
+            'last_name' => $request['last_name'],
+            'email' => $request['email'],
+            'password' => Hash::make($request['password']),
+            'address' => $request['address'],
+            'postal_code' => $request['postal_code'],
+            'phone' => $request['phone'],
+            'dni' => $request['dni'],
+            'id_type' => $request['id_type'],
+        ]);
         return redirect('user');
     }
 

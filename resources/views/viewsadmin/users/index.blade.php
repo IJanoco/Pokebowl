@@ -2,20 +2,20 @@
 
 @section('content')
 @section('css')
-<link rel="stylesheet" href="{{asset('assetsadmin/dist/assets/modules/datatables_now/dataTables.bootstrap4.min.css')}}">
+<link rel="stylesheet" href="//cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
 @endsection
 
 <div class="col-12 grid-margin stretch-card">
       <div class="card">
           <div class="card-body">   
             <div class="table-responsive">
-              <div class="d-flex justify-content-end">
+              <div class="d-flex justify-content-end mb-3">
                 <button type="submit" class="btn btn-primary"  data-toggle="modal" data-target="#createUser">
                   <span class="fas fa-user-plus"></span>
                 </button>
               </div> 
               
-                <table id="table" class="table table-striped table-bordered" style="width:100%">
+                <table id="table" class="table table-striped table-bordered data-table" style="width:100%">
                       <thead class="bg-secondary">
                           <tr>
                             <th>#</th>

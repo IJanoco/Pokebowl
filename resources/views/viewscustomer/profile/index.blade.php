@@ -42,7 +42,7 @@
                                     <input type="email" class="form-control" value="{{Auth::user()->dni}}" disabled>
                                 </div>
                                 @include('viewscustomer.profile.edit')
-                                <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#editProfile" >
+                                <button type="button" class="btn btn-warning btn-block" data-toggle="modal" data-target="#editProfile" >
                                      <span class="fas fa-pen"></span>     
                                  </button>
                                                

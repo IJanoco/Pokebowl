@@ -1,21 +1,22 @@
 @extends('layouts.masterpageadmin')
 
 @section('content')
-
+@section('css')
+<link rel="stylesheet" href="//cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+@endsection
 
   <div class="col-12 grid-margin stretch-card">
     
       <div class="card">        
         <div class="card-body">
-          <div class="table-responsive">
-            
-            <br>
-            <table id="productos" class="table table-striped table-bordered" style="width:100%"">
-              <div class="d-flex justify-content-end">
-                <button type="submit" class="btn btn-primary btn-fw"  data-toggle="modal" data-target="#createProduct">
-                  <span class="fas fa-plus"></span>
-                </button>
-              </div>
+          <div class="d-flex justify-content-end mb-3">
+            <button type="submit" class="btn btn-primary btn-fw"  data-toggle="modal" data-target="#createProduct">
+              <span class="fas fa-plus"></span>
+            </button>
+          </div>
+          <div class="table-responsive">         
+            <table id="productos" class="table table-striped table-bordered data-table" style="width:100%"">
+             
               <thead class="bg-secondary" >
                 <tr>
                   <th> Id </th>
@@ -36,7 +37,7 @@
                     <td> {{$loop ->iteration}} </td>
                     <td> {{$item->name}} </td>
                     <td> {{$item->description}}</td>
-                    <td> {{$item->price}} </td>
+                    <td> {{number_format($item->price,2)}} </td>
                     <td> {{$item->type_product->type}}</td>  
                     <td> <img src="{{$item->url_img}}" class="avatar" alt=""></td>                  
                     <td>                                                       

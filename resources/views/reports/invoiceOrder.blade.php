@@ -25,18 +25,41 @@
                 max-width: 600px;
             }           
         }
+        .table{
+            width:100%;
+            margin-bottom:1rem;
+            color:#212529
+        }
+        .table td,
+        .table th{
+            padding:.75rem;
+            vertical-align:top;
+            border-top:1px solid #dee2e6
+        }
+        .table thead th{
+            vertical-align:bottom;
+            border-bottom:2px solid #dee2e6
+        }
+        .table tbody+tbody{
+            border-top:2px solid #dee2e6
+        }
+       
     </style>
 </head>
 
 <body>
-    <div class="container2">
-            <img src="img/encabezado.png" width="100%" height="200px" alt="">
+    <header>
+        <img src="{{$company->url_logo}}" width="100%" height="200px" alt="">
+    </header>
+    <section>
+        <div class="container2">
+       
             <div style="width: 100%;">
                 <div style="width: 50%; float:left;">
                     <h3 style="text-align: left;">Datos del Cliente:</h3>
                 </div>
                 <div style="width: 50%; float:right;">
-                    <p style="text-align: right;">Juan Perón </p>
+                    <p style="text-align: right;">{{ $invoice->user->name }}</p>
                 </div>
             </div>
             <br><br>
@@ -45,68 +68,81 @@
                     <h3 style="text-align: left;">Teléfono:</h3>
                 </div>
                 <div style="width: 50%; float:left;">
-                    <p style="text-align: right;">982945732</p>
+                    <p style="text-align: right;">{{$invoice->user->phone}}</p>
                 </div>
             </div>
         <br><br>
+            
             <div style="width: 100%;">
                 <div style="width: 50%; float:right;">
                     <h3 style="text-align: left;">Forma de Recojo:</h3>
                 </div>
                 <div style="width: 50%; float:left;">
-                    <p style="text-align: right;">En tienda</p>
+                    <p style="text-align: right;">{{$invoice->delivery_type}}</p>
                 </div>
             </div>
+            
             <br><br>
             <div style="width: 100%; ">
                 <div style="width: 50%; float:right;">
                     <h3 style="text-align: left;">Dirección de entrega:</h3>
                 </div>
                 <div style="width: 50%; float:left;">
-                    <p style="text-align: right;">Av. Por ahí</p>
+                    <p style="text-align: right;">
+                        @if ($invoice->delivery_type === 'Envío a domicilio')
+                        {{ $invoice->user->address }}
+                        @elseif ($invoice->delivery_type === 'Recojo en tienda')
+                            {{$company->address}}
+                        @endif
+                    </p>
                 </div>
             </div>
+      
         <br><br>
         <div style="width: 100%;">
             <div style="width: 50%; float:right;">
                 <h3 style="text-align: left;">Mi Pedido:</h3>
             </div>
             <div style="width: 50%; float:left; ">
-                <p style="text-align: right;">n° Pedido: B007-01</p>
+                <p style="text-align: right;"> {{$invoice->id}} </p>
             </div>
         </div>
-        <br><br>
-        <div style="width: 100%;">
-            <div style="width: 25%; float:right;">
-                <p  style="text-align: left;">Poke-bowl de salmon hawaiano</p>
-            </div>
-            <div style="width: 25%; float:left; ">
-                <p style="text-align: right;">s/.32.00</p>
-            </div>
-            <div style="width: 25%; float:left;">
-                <p  style="text-align: right;">2</p>
-            </div>
-            <div style="width: 25%; float:left; ">
-                <img src="img/hawaiano.png" style="float:right; width:150px; height:100px;" alt="">
-            </div>
+        <br><br><br>
+    
+        <table class="table">
             
-            
-            
-        </div>
-        <br><br>
-        <div class="">
-            <img src="img/inkakola.png" style="float:right; width:100px; height:100px;"  alt="">
-            <p>InkaKola 500ml</p>
-            <p>s/.4.50</p>
-        </div>
-        <br><br>
-        <div class="" >
-            <p>Sub Total:S/.36.5</p>
-            <p>Igv: S/6.57</p>
-            <p>Total de la Compra:S/43.07</p>
-        </div>
-    </div>
- 
+            <thead>
+                <tr>
+                    <td> Producto </td> 
+                    <td> Precio </td>
+                    <td> Cantidad</td>
+                    <td> Subtotal</td>    
+                </tr>
+            </thead>
+            <tbody>
+                @foreach ($invoice->product as $item)
+                <tr>
+                    <td>{{ $item->name }}</td>
+                    <td>{{ number_format($item->price, 2) }}</td>
+                    <td>{{ $item->pivot->quantity }}</td>
+                    <td>S/{{ number_format($item->price * $item->pivot->quantity, 2) }}</td>
+                </tr>
+            @endforeach
+                  <tr>
+                    <td>Total</td>
+                    <td colspan="2"></td>
+                    
+                    <td> S/{{ number_format($invoice->product->sum(function($item) {
+                        return $item->price * $item->pivot->quantity;
+                    }), 2) }}</td>
+                  </tr>
+             
+            </tbody>
+        </table>
+
+    </section>
+  
+   
 </body>
 
 </html>

@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Barryvdh\DomPDF\Facade as PDF;
 
-use App\Models\Orders;
+use App\Models\{Orders, Company};
 
 class InvoiceController extends Controller
 {
@@ -18,6 +18,7 @@ class InvoiceController extends Controller
     public function index()
     {
         $invoice = Orders::with(['product','user'])->get();
+
         return view('viewsadmin.invoice',['invoice' => $invoice]);
     }
 
@@ -98,19 +99,7 @@ class InvoiceController extends Controller
         //
     }
 
-    public function ReportInvoice()
-    {
-        //$user = User::all();
-        $pdf = \PDF::loadView('reports.invoiceOrder');
-        
-        //$pdf->setPaper(array(0,0,580.00,800.00),'landscape');
-
-        $pdf_name = 'Reporte.pdf';
-         return $pdf->stream($pdf_name);
-        //return $pdf->download($pdf_name);
-       //return view ('reports.induccion');
-    }
-
+   
    
 
    

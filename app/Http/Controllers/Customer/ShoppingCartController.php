@@ -6,7 +6,8 @@ namespace App\Http\Controllers\Customer;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use App\Models\{User, Product, Shopping_Cart};
+use App\Models\{User, Product, Shopping_Cart, Orders, Product_Orders, Company};
+use Barryvdh\DomPDF\Facade as PDF;
 
 class ShoppingCartController extends Controller
 {
@@ -109,5 +110,112 @@ class ShoppingCartController extends Controller
     {
         //
     }
+    public function deleteProduct(Request $request)
+    {
+        $id_product = $request->input('id_product');
+       
+        
+        if (Shopping_Cart::where('id_product', $id_product)->where('id_customer', Auth::id())->exists()) 
+        {
+            // Elimina el producto específico del carrito
+            $cartItem = Shopping_Cart::where('id_product', $id_product)->where('id_customer', Auth::id())->first();
+            $cartItem -> delete();
+             // Obtener al usuario autenticado
+            $user = Auth::user();
+            // Calcular el nuevo total
+            $Total = $user->shoppingCarts->sum(function($carts) {
+                return $carts->product->price * $carts->quantity;
+            });
 
+            // Formatear el nuevo total
+            $newTotal = number_format($Total, 2);
+
+            return response()->json(['flash_message' => 'DeleteProduct!', 'newTotal' => $newTotal]);
+        }
+            
+    }
+
+    public function updateSubtotal(Request $request)
+    {
+        $productId = $request->input('product_id');
+        $quantity = $request->input('value');
+        // Obtener el producto por su ID
+        $product = Product::find($productId);
+        if ($product) {
+            $subtotal = $product->price * $quantity;
+        }
+        $cart = Shopping_Cart::where('id_customer', Auth::user()->id)->where('id_product',$productId)->first();
+        $cart->update(['quantity'=> $quantity]);
+        $cartItems = Shopping_Cart::where('id_customer', Auth::user()->id)->get();
+        $newTotal = 0;
+        foreach ($cartItems as $cartItem) {
+             $price = $cartItem->product->price;
+                $newTotal += $cartItem->quantity * $price;
+        }
+        // Devolver el nuevo total como respuesta JSON
+        return response()->json([
+            'total' => $newTotal,
+            'subtotal' => $subtotal
+        ]);
+    }
+
+    
+
+    
+
+    public function createOrder(Request $request){
+        // Obtener datos del formulario
+        $deliveryType = $request->input('delivery_type');
+        $prodQ = $request->input('prodQ');
+        
+        // Obtener el carrito del usuario autenticado
+        $user = Auth::user();
+        $cart = $user->shoppingCarts;
+        
+        if ($cart->count() > 0) {
+            $order = new Orders();
+            $order->delivery_type = $deliveryType;
+            $order->id_customer = $user->id;
+            $order->status_pay = 'pendiente';
+            $order->save();
+    
+            foreach ($prodQ as $productQty) {
+                $productOrder = new Product_Orders();
+                $productOrder->id_product = $productQty['product_id'];
+                $productOrder->id_order = $order->id;
+                $productOrder->quantity = $productQty['input_qty'];
+                $productOrder->save();
+            }
+        } else {
+            return response()->json(['status' => 'Denied!']);
+        }
+    
+        // Limpiar el carrito después de crear el pedido
+        $user->shoppingCarts()->delete();
+        
+        $reportUrl = route("reports.invoiceOrder", ['id_order' => $order->id]);
+    
+        return response()->json(['status' => 'Created!', 'id_order' => $order->id, 'report_url' => $reportUrl]);
+    }
+    
+
+    public function ReportInvoice()
+    {   
+        $invoice = Orders::with(['product','user'])
+                        ->where('id_customer', Auth::id())
+                        ->latest()
+                        ->first();
+        $company = Company::first();
+        //$user = User::all();
+        $pdf = \PDF::loadView('reports.invoiceOrder', compact('invoice','company'));
+        
+        //$pdf->setPaper(array(0,0,580.00,800.00),'landscape');
+
+        $pdf_name = 'Reporte.pdf';
+         return $pdf->stream($pdf_name);
+        //return $pdf->download($pdf_name);
+       //return view ('reports.induccion');
+    }
+
+   
 }

@@ -65,154 +65,154 @@ class DatabaseSeeder extends Seeder
             'id' => '4',
             'type' => 'Bebida'
         ]);
-        
+
         Product::create([
             'id'=>'1',
-            'name'=>'Gyoza',
-            'description'=>'Empanadillas de masa ligera rellenas de pollo.',
-            'price'=>'6.50',
-            'url_img'=>'https://ohmydish.com/uploads/2021/homemade-gyoza.jpg',
-            'id_type'=>'1'
-          ]);
-          Product::create([
-              'id'=>'2',
-              'name'=>'Tequeños',
-              'description'=>'Tequeños rellenos de jamón inglés.',
-              'price'=>'5.30',
-              'url_img'=>'https://comeperuano.b-cdn.net/wp-content/uploads/2020/04/teque%C3%B1os-peruanos.jpg',
-              'id_type'=>'1'
-          ]);
+            'name'=>'PokeBowl Premium Veggie',
+            'description'=>'1 Porción de Arroz Blanco + 1 Porción de Pepino Encurtido + 1 Porción de Repollo.',
+            'price'=>'18',
+            'url_img'=>'assetscustomer/imgmenu/premium.png',
+            'id_type'=>'2'
+        ]);
+
+        Product::create([
+            'id'=>'2',
+            'name'=>'Agua',
+            'description'=>'Botella de agua personal.',
+            'price'=>'3',
+            'url_img'=>'assetscustomer/imgmenu/agua.png',
+            'id_type'=>'4'
+        ]);
+          
             Product::create([
               'id'=>'3',
               'name'=>'Tempura',
               'description'=>'Frituras ligeras de verduras.',
               'price'=>'4.20',
-              'url_img'=>'https://www.japonalternativo.com/wp-content/uploads/2023/02/snacks-aperitivos-de-japon-768x543.jpg',
+              'url_img'=>'assetscustomer/imgmenu/tempura.png',
               'id_type'=>'1'
           ]);
-            Product::create([
-              'id'=>'4',
-              'name'=>'Harumaki',
-              'description'=>'Rollitos de primavera típicos de Japón.',
-              'price'=>'8.60',
-              'url_img'=>'https://www.japonalternativo.com/wp-content/uploads/2023/02/tapas-japonesas-mas-famosas-del-mundo.jpg',
-              'id_type'=>'1'
-          ]);
+           
           
-          
+          Product::create([
+            'id'=>'4',
+            'name'=>'Gaseosa Inca Cola',
+            'description'=>'Bebida Gasificada Personal.',
+            'price'=>'6',
+            'url_img'=>'assetscustomer/imgmenu/incacola.png',
+            'id_type'=>'4'
+        ]);
   
   
           Product::create([
               'id'=>'5',
-              'name'=>'PokeBowlVegetariano',
-              'description'=>'1 PorcionDepepinoEncurtido + 1 PorcionDePalta + 1 PorcionTofuFrito + 1 PorcionDeArrozBlanco + 1 PorcionDeMangoTrozado',
+              'name'=>'PokeBowl Vegetariano',
+              'description'=>'1 Porción de Pepino Encurtido + 1 Porción de Palta + 1 Porción de Arroz Blanco + 1 Porción de Mango Trozado.',
               'price'=>'15',
-              'url_img'=>'https://www.noracooks.com/wp-content/uploads/2022/06/vegan-poke-bowl-6.jpg',
+              'url_img'=>'assetscustomer/imgmenu/vegetariano.png',
               'id_type'=>'2'
           ]);
           Product::create([
               'id'=>'6',
-              'name'=>'PokeBowlMini',
-              'description'=>'1 PorcionDeArrozBlanco + 1 PorcionDePalta + 1 PorcionDeTomatesCherrys + 1 PorcionDeSalmonTrozado + 1 PorcionDeQuesoCrema',
+              'name'=>'PokeBowl Mini',
+              'description'=>'1 Porción de Arroz Blanco + 1 Porción de Palta + 1 Porción de Salmón Trozado + 1 Porción de Queso Crema.',
               'price'=>'12',
-              'url_img'=>'https://images.immediate.co.uk/production/volatile/sites/30/2020/08/poke-bowl-76b09ee.jpg',
+              'url_img'=>'assetscustomer/imgmenu/mini.png',
               'id_type'=>'2'
           ]);
           Product::create([
               'id'=>'7',
-              'name'=>'PokeBowlMediterraneo',
-              'description'=>'1 PorcionDePepinoEncurtido + 1 PorcionDeAceitunasVerdes + 1 PorcionDeQuesoFresco + 1 PorcionDeTomatesCherrys + 1 PorcionDePalta + 1 PorcionDeGarbanzos',
+              'name'=>'PokeBowl Mediterráneo',
+              'description'=>'1 Porción de Pepino Encurtido + 1 Porción de Aceitunas Verdes + 1 Porción de Queso + 1 Porción de Tomates + 1 Porción de Palta.',
               'price'=>'16',
-              'url_img'=>'https://imag.bonviveur.com/emplatado-final-del-poke-bowl-mediterraneo.jpg',
+              'url_img'=>'assetscustomer/imgmenu/mediterraneo.png',
               'id_type'=>'2'
           ]);
+          
           Product::create([
-              'id'=>'8',
-              'name'=>'PokeBowlPremiumVeggie',
-              'description'=>'1 PorcionDeArrozBlanco + 1 PorcionDeToffuCocido + 1 PorcionDePepinoEncurtido + 1 PorcionDeRepollo + 1 PorcionDeBrocoli + 1 PorcionDeEsparragos + TrozosDePimientoAmarillo ',
-              'price'=>'18',
-              'url_img'=>'https://veryveganish.com/wp-content/uploads/2021/09/Featured-Sushi-Bowls-with-Oil-free-Sesame-Ginger-Wasabi-Dressing-1.jpg',
-              'id_type'=>'2'
+            'id'=>'8',
+            'name'=>'Gyoza',
+            'description'=>'Empanadillas de masa ligera rellenas de pollo.',
+            'price'=>'6.50',
+            'url_img'=>'assetscustomer/imgmenu/gyozas.png',
+            'id_type'=>'1'
           ]);
-  
-  
-  
-  
+    
           Product::create([
               'id'=>'9',
-              'name'=>'SuspiroALaLimeña',
-              'description'=>'Dulce clasico peruano | Porción mediana para una persona.',
+              'name'=>'Suspiro a la Limeña',
+              'description'=>'Dulce clásico peruano | Porción mediana para una persona.',
               'price'=>'10',
-              'url_img'=>'https://www.ahorrarnuncafuetanbueno.com.pe/wp-content/uploads/2021/08/suspiro-limena.jpg',
+              'url_img'=>'assetscustomer/imgmenu/suspiro.png',
               'id_type'=>'3'
           ]);
           Product::create([
               'id'=>'10',
-              'name'=>'TortaTresLeches',
-              'description'=>'Dulce clasico peruano | Porcion mediana para una persona.',
+              'name'=>'Torta Tres Leches',
+              'description'=>'Dulce clásico peruano | Porción mediana para una persona.',
               'price'=>'12',
-              'url_img'=>'https://www.laylita.com/recetas/wp-content/uploads/2018/09/1-Receta-del-tres-leches-500x500.jpg',
+              'url_img'=>'assetscustomer/imgmenu/tres_leches.png',
               'id_type'=>'3'
           ]);
           Product::create([
               'id'=>'11',
-              'name'=>'ArrozConLeche',
-              'description'=>'Dulce clasico peruano | Porcion mediana para una persona',
+              'name'=>'Arroz con Leche',
+              'description'=>'Dulce clásico peruano | Porción mediana para una persona.',
               'price'=>'14',
-              'url_img'=>'https://img.bekiacocina.com/cocina/0000/96-h.jpg',
+              'url_img'=>'assetscustomer/imgmenu/arroz_leche.png',
               'id_type'=>'3'
           ]);
           Product::create([
               'id'=>'12',
               'name'=>'Crema Volteada',
-              'description'=>'Dulce clasico peruano | Porcion mediana para una persona',
+              'description'=>'Dulce clásico peruano | Porción mediana para una persona.',
               'price'=>'13',
-              'url_img'=>'https://viajerocasual.com/wp-content/uploads/2021/05/postres-peruanos-crema-volteada.jpg',
+              'url_img'=>'assetscustomer/imgmenu/crema.png',
               'id_type'=>'3'
-          
-          
+                    
           
           ]);
           Product::create([
               'id'=>'13',
-              'name'=>'Té De Manzanilla',
-              'description'=>'Bebida caliente | Taza para uno',
+              'name'=>'Té de Manzanilla',
+              'description'=>'Bebida caliente | Taza para uno.',
               'price'=>'5',
-              'url_img'=>'https://www.clikisalud.net/wp-content/uploads/2020/05/te-de-manzanilla-cuarente-a.jpg',
+              'url_img'=>'assetscustomer/imgmenu/manzanilla.png',
               'id_type'=>'4'
           ]);
           Product::create([
               'id'=>'14',
-              'name'=>'TéDeCanelaYClavoDeOlor',
-              'description'=>'Bebida caliente | Taza para uno',
+              'name'=>'Té De Canela Y Clavo De Olor',
+              'description'=>'Bebida caliente | Taza para uno.',
               'price'=>'5',
-              'url_img'=>'https://www.semana.com/resizer/7qNiQKs4Fg7G9A7izWEohZYvnJw=/1280x0/smart/filters:format(jpg):quality(80)/cloudfront-us-east-1.images.arcpublishing.com/semana/IQF24QU4QJFLFFSNY4YFRAYXXE.jpg',
+              'url_img'=>'assetscustomer/imgmenu/canelayclavo.png',
               'id_type'=>'4'
           ]);
+          
           Product::create([
-              'id'=>'15',
-              'name'=>'Agua',
-              'description'=>'Botella de agua personal | Pedir con o sin gas',
-              'price'=>'3',
-              'url_img'=>'https://vivanda.vtexassets.com/arquivos/ids/228546/1005652002.jpg?v=637420553513970000',
-              'id_type'=>'4'
-          ]);
+            'id'=>'15',
+            'name'=>'Tequeños',
+            'description'=>'Tequeños rellenos de jamón inglés.',
+            'price'=>'5.30',
+            'url_img'=>'assetscustomer/imgmenu/tequeños.png',
+            'id_type'=>'1'
+            ]);
           Product::create([
               'id'=>'16',
-              'name'=>'GaseosaCocaCola',
-              'description'=>'Bebida Gasificada Personal | Pedir fria o temperada',
+              'name'=>'Gaseosa Coca Cola',
+              'description'=>'Bebida Gasificada Personal.',
               'price'=>'6',
-              'url_img'=>'https://ihopperu.com/wp-content/uploads/2020/05/coca-cola.png-1.jpg',
+              'url_img'=>'assetscustomer/imgmenu/coca.png',
               'id_type'=>'4'
           ]);
           Product::create([
-              'id'=>'17',
-              'name'=>'GaseosaIncaCola',
-              'description'=>'Bebida Gasificada Personal | Pedir fria o temperada ',
-              'price'=>'6',
-              'url_img'=>'https://www.popolopizzeria.com/cdn/shop/products/incaSA_per_1024x1024.jpg?v=1561405979',
-              'id_type'=>'4'
-          ]);
+            'id'=>'17',
+            'name'=>'Harumaki',
+            'description'=>'Rollitos de primavera típicos de Japón.',
+            'price'=>'8.60',
+            'url_img'=>'assetscustomer/imgmenu/harumaki.png',
+            'id_type'=>'1'
+        ]);
 
           Company::create([
             'id' => '1',
@@ -222,7 +222,7 @@ class DatabaseSeeder extends Seeder
             'phone' => '987654321',
             'district' => 'San Isidro',
             'address' => 'Mz. Isidoro lt2',
-            'url_logo' => 'none',
+            'url_logo' => 'img/encabezado.png',
           ]);
   
         

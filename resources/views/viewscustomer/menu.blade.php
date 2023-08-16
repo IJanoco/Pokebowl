@@ -37,7 +37,7 @@
                     </p>
                     <div class="options">
                       <h6>
-                        S/{{$menu->price}}
+                        S/{{number_format($menu->price,2)}}
                       </h6>
                       
 

@@ -9,7 +9,10 @@ use App\Models\Product;
 class Orders extends Model
 {
     use HasFactory;
-
+    protected $table = 'orders';
+    protected $primarykey = 'id';
+    protected $fillable=['delivery_type','id_customer','status_pay'];
+    
     public function user()
     {
         return $this->belongsTo(User::class,'id_customer');

@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Models\Orders;
+use App\Models\{Orders,Shopping_Cart, Product, Product_Orders};
 class OrdersController extends Controller
 {
     /**
@@ -36,7 +36,7 @@ class OrdersController extends Controller
      */
     public function store(Request $request)
     {
-        //
+       //
     }
 
     /**
