@@ -106,7 +106,7 @@
                           </div>
                           <div class="row mb-3">
                             <div class="col-4">
-                                <input id="postal_code" type="text" class="form-control @error('postal_code') is-invalid @enderror" name="postal_code" pattern="[0-9]{9}" value="{{ old('postal_code') }}" required autocomplete="postal_code" autofocus placeholder="Ingrese su código postal">
+                                <input id="postal_code" type="text" class="form-control @error('postal_code') is-invalid @enderror" name="postal_code" pattern="^[0-9]+" value="{{ old('postal_code') }}" required autocomplete="postal_code" autofocus placeholder="Ingrese su código postal">
 
                                 @error('postal_code')
                                     <span class="invalid-feedback" role="alert">
@@ -126,7 +126,7 @@
                                 @enderror                
                             </div>
                             <div class="col-4">
-                                <input id="dni" type="text" class="form-control @error('dni') is-invalid @enderror" pattern="[0-9]" name="dni" value="{{ old('dni') }}" required autocomplete="dni" autofocus placeholder="Ingrese su dni">
+                                <input id="dni" type="text" class="form-control @error('dni') is-invalid @enderror" pattern="^[0-9]+" name="dni" value="{{ old('dni') }}" required autocomplete="dni" autofocus placeholder="Ingrese su dni">
 
                                 @error('dni')
                                     <span class="invalid-feedback" role="alert">
@@ -148,7 +148,7 @@
                                 <div class="modal-dialog" role="document">
                                     <div class="modal-content">
                                             <div class="modal-header">
-                                                <h5 class="modal-title" style="text-transform: uppercase; id="exampleModalLongTitle">Términos y Condiciones</h5>
+                                                <h5 class="modal-title" style="text-transform: uppercase;" id="exampleModalLongTitle">Términos y Condiciones</h5>
                                                 <a type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                     <span aria-hidden="true">&times;</span>
                                                 </a>
