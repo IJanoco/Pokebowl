@@ -34,11 +34,13 @@ class LoginController extends Controller
         {
             case 1: $this->redirectTo =
             route('home');
+            session()->flash('success','Successfully!');
             return $this->redirectTo;
             break;
 
             case 2: $this->redirectTo =
             route('dashboard');
+            session()->flash('success','Successfully!');
             return $this->redirectTo;
             break;
 

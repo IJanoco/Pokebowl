@@ -5,8 +5,7 @@
     <div class="col-8 grid-margin stretch-card ">
         <div class="card">
             <div class="card-body">
-                <h4 class="card-title">Información de la Compañía</h4>
-                
+                <h4 class="card-title">Información de la Compañía</h4>              
                     <form class="forms-sample">
                         @foreach($company as $company)
                             <div class="form-group">
@@ -32,12 +31,9 @@
                             <div class="form-group">
                                 <label>Correo Electrónico:</label>
                                 <input type="email" class="form-control" value="{{$company->email}}" disabled>
-                            </div>
-                        
-                        @endforeach  
-                    
-                    </form>
-                
+                            </div>                       
+                        @endforeach                    
+                    </form>               
             </div>
         </div>
     </div>

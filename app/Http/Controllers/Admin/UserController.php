@@ -5,7 +5,8 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\User;
-use App\Models\Type_Users;
+use App\Models\{Type_Users, Orders};
+use Auth;
 class UserController extends Controller
 {
     /**
@@ -15,7 +16,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = User::with('type_user')->get();
+        $users = User::with('type_user','orders')->get();
         $typeusers = Type_Users::all();
         return view('viewsadmin.users.index', [
             'users' => $users,
@@ -116,11 +117,19 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        $users = User::find($id);
-        $users->delete();
-        return redirect('user')->with('flash_message', 'deleted!');
-    }
+        $authUser = Auth::user();
 
+        // Verificar si el ID del usuario autenticado coincide con el ID del usuario a eliminar
+        if ($id == $authUser->id) {
+            return redirect()->back()->with('error', 'Error!');
+        }
+
+        // Eliminación del usuario
+            $user = User::findOrFail($id);
+            $users->delete();
+            return redirect('user')->with('flash_message', 'deleted!');
+    }
+    
     
   
 }

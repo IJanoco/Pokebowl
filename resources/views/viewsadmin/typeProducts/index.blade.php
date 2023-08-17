@@ -65,9 +65,11 @@
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="{{asset('assetsadmin/dist/assets/js/alerts.js')}}"></script>
 <script src="{{asset('assetsadmin/dist/assets/js/hidenmodals.js')}}"></script>
-
+<script src="{{asset('assetsadmin/dist/assets/js/languageDt.js')}}"></script>
 <script>
-    new DataTable('#typeProducts');
+        $('#typeProducts').DataTable( {
+        "language": DataTableEs
+    } );
 </script>
 @include('viewsadmin.alerts')
 @endsection

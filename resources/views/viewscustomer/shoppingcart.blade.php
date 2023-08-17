@@ -2,8 +2,11 @@
 
 @section('content')
 
+@section('css')
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/css/nice-select.min.css" integrity="sha512-CruCP+TD3yXzlvvijET8wV5WxxEh5H8P4cmz0RFbKK6FlZ2sYl3AEsKlLPHbniXKSrDdFewhbmBK5skbdsASbQ==" crossorigin="anonymous" />
+@endsection
     <div class="col-9 container-fluid d-flex justify-content-center mt-3">
-            <div class="col-5 container-fluid">
+            <div id="div-prods"class="col-5 container-fluid">
                 @foreach($cart as $item)
                         <div class="row border border-secondary rounded mb-3 bg-light" data-product-id="{{ $item->product->id }}">
                             <div class="col-3 d-flex justify-content-center align-items-center">
@@ -42,7 +45,7 @@
                 @endforeach
             </div> 
             
-            <div class="col-4 container-fluid">
+            <div class="col-5 container-fluid">
                           
                 <table class="table">
                     <thead>                    

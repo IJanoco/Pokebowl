@@ -15,7 +15,7 @@
             </button>
           </div>
           <div class="table-responsive">         
-            <table id="productos" class="table table-striped table-bordered data-table" style="width:100%"">
+            <table id="products" class="table table-striped table-bordered data-table" style="width:100%"">
              
               <thead class="bg-secondary" >
                 <tr>
@@ -72,9 +72,11 @@
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="{{asset('assetsadmin/dist/assets/js/alerts.js')}}"></script>
 <script src="{{asset('assetsadmin/dist/assets/js/hidenmodals.js')}}"></script>
-
+<script src="{{asset('assetsadmin/dist/assets/js/languageDt.js')}}"></script>
 <script>
-  new DataTable('#productos');
+    $('#products').DataTable( {
+        "language": DataTableEs
+    } );
 </script>
 @include('viewsadmin.alerts')
 @endsection  

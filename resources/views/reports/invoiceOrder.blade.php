@@ -59,7 +59,7 @@
                     <h3 style="text-align: left;">Datos del Cliente:</h3>
                 </div>
                 <div style="width: 50%; float:right;">
-                    <p style="text-align: right;">{{ $invoice->user->name }}</p>
+                    <p style="text-align: right;">{{ $invoice->user->name }} {{ $invoice->user->last_name}}</p>
                 </div>
             </div>
             <br><br>

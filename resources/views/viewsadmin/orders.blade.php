@@ -70,8 +70,11 @@
 @section('js')
 <script src="{{asset('assetsadmin/dist/assets/modules/datatables_now/dataTables.bootstrap4.min.js')}}"></script>
 <script src="{{asset('assetsadmin/dist/assets/modules/datatables_now/dataTables.min.js')}}"></script>
+<script src="{{asset('assetsadmin/dist/assets/js/languageDt.js')}}"></script>
 <script>
-  new DataTable('#orders');
+    $('#orders').DataTable( {
+        "language": DataTableEs
+    } );
 </script>
 @endsection
 @endsection

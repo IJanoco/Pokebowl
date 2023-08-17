@@ -18,7 +18,7 @@ class CompanyController extends Controller
         $company = Company::all();
         return view('viewsadmin.company', ['company' => $company]);
     }
-
+    
     /**
      * Show the form for creating a new resource.
      *

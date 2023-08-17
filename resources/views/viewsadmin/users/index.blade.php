@@ -51,14 +51,21 @@
                               </button>                      
                           </td>
                           <td>
-                            <form class="alertDelete" method="POST" action="{{ url('/user' . '/' . $item->id) }}" accept-charset="UTF-8" style="display:inline">
-                              @method('DELETE')
-                              @csrf
-                                <button type="submit" class="btn-md btn-danger btn-fw" data-toggle="modal" data-target="#deleteUser{{$item->id}}">
-                                  <span class="fas fa-trash"></span>
-                                </button>                
-                            </form>
-                          </td>              
+                            @if($item->orders->count() === 0)
+                                <form class="alertDelete" method="POST" action="{{ url('/user' . '/' . $item->id) }}" accept-charset="UTF-8" style="display:inline">
+                                    @method('DELETE')
+                                    @csrf
+                                    <button type="submit" class="btn-md btn-danger btn-fw" data-toggle="modal" data-target="#deleteUser{{$item->id}}">
+                                        <span class="fas fa-trash"></span>
+                                    </button>
+                                </form>
+                            @else
+                                <button class="btn-md btn-danger btn-fw" disabled>
+                                    <span class="fas fa-trash"></span>
+                                </button>
+                            @endif
+                        </td>
+                        
                         </tr>
                       @endforeach            
                     </tbody>
@@ -75,9 +82,31 @@
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="{{asset('assetsadmin/dist/assets/js/alerts.js')}}"></script>
 <script src="{{asset('assetsadmin/dist/assets/js/hidenmodals.js')}}"></script>
+<script src="{{asset('assetsadmin/dist/assets/js/languageDt.js')}}"></script>
 <script>
-  new DataTable('#table');
+    $('#table').DataTable( {
+        "language": DataTableEs
+    } );
 </script>
+  @if(session('error') == 'Error!')
+    <script>
+      const Toast = Swal.mixin({
+      toast: true,
+      position: 'top-end',
+      showConfirmButton: false,
+      timer: 1500,
+      didOpen: (toast) => {
+        toast.addEventListener('mouseenter', Swal.stopTimer)
+        toast.addEventListener('mouseleave', Swal.resumeTimer)
+      }
+    })
+
+    Toast.fire({
+      icon: 'error',
+      title: 'No puedes eliminar tu propio usuario'
+    })
+  </script>
+  @endif
 @include('viewsadmin.alerts')
 @endsection
 @section('modals')

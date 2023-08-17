@@ -21,8 +21,11 @@
 
   <!--owl slider stylesheet -->
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
-  <!-- nice select  -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/css/nice-select.min.css" integrity="sha512-CruCP+TD3yXzlvvijET8wV5WxxEh5H8P4cmz0RFbKK6FlZ2sYl3AEsKlLPHbniXKSrDdFewhbmBK5skbdsASbQ==" crossorigin="anonymous" />
+  
+  <!-- Font-Family  -->
+
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@1,700&display=swap" rel="stylesheet">
+
   <!-- font awesome style -->
   <link href="{{asset('assetscustomer/css/font-awesome.min.css')}}" rel="stylesheet" />
 
@@ -45,7 +48,7 @@
         <nav class="navbar navbar-expand-lg custom_nav-container">
           <a class="navbar-brand" href="{{route('home')}}">
             <span>
-                <h5 class="m-b-10">WELCOME TO POKEBOWL YES! - {{ Auth::user()->name }}</h5> 
+                <h5 class="m-b-10">BIENVENIDO A POKEBOWL YES! - {{ Auth::user()->name }}</h5> 
             </span>
           </a>
           

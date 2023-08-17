@@ -143,7 +143,7 @@
                 // Actualizar la página o redirigir a otra ruta
                 if (response.status === 'Created!') {     
                     
-                    $('.container-fluid.col-5').empty();
+                    $('#div-prods').empty();
                     $('.trdelete').empty();
                     $('#total').text('S/ 0.00');
                     var reportUrl = response.report_url;
